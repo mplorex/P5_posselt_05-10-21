@@ -78,3 +78,14 @@ for (let i = 0; i < teddies.length; i++) {
     cardBody.appendChild(cardBtn)
     teddyList.appendChild(col);
 }
+
+/*
+
+fetch(​"http://localhost:3000/api/teddies")
+.then(response => {
+    return response.json()
+})
+.then(teddies => {
+    const teddyList = document.getElementById('teddies')
+
+    */
