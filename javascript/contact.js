@@ -63,6 +63,24 @@ cFormGroupDInput.setAttribute('data-form-field', 'Message')
 cFormButton.setAttribute('type', 'submit')
 cFormButton.setAttribute('class', 'btn btn-lg btn-danger')
 
-console.log(contact)
+contact.appendChild(cRow)
+cRow.appendChild(cContainer)
+cContainer.appendChild(cHeader)
+cHeader.appendChild(cHeaderTitle)
+cContainer.appendChild(cForm)
+cForm.appendChild(cFormInput)
+cForm.appendChild(cFormGroupA)
+cFormGroupA.appendChild(cFormGroupAInput)
+cForm.appendChild(cFormGroupB)
+cFormGroupB.appendChild(cFormGroupBInput)
+cForm.appendChild(cFormGroupC)
+cFormGroupC.appendChild(cFormGroupCInput)
+cForm.appendChild(cFormGroupD)
+cFormGroupD.appendChild(cFormGroupDInput)
+cForm.appendChild(cFormBtn)
+cFormBtn.appendChild(cFormButton)
+
+
+console.log(contact);
 
 
