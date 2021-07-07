@@ -1,8 +1,9 @@
-fetch(​"http://localhost:3000/api/teddies")
+fetch('http://localhost:3000/api/teddies')
 .then(response => {
     return response.json()
 })
 .then(teddies => {
+    const teddyList = document.getElementById('teddies')
     for (let i = 0; i < teddies.length; i++) {
         console.log(teddies[i]);
         const col = document.createElement('div')
@@ -18,6 +19,7 @@ fetch(​"http://localhost:3000/api/teddies")
 
         col.setAttribute('class', 'col-12 col-sm-4 mb-4')
         card.setAttribute('class', 'card')
+        card.setAttribute('onClick', 'goToTeddy("'+teddies[i]._id+'")');
         cardImg.setAttribute('class', 'card-img-top')
         cardBody.setAttribute('class', 'card-body')
         cardTitle.setAttribute('class', 'card-title')
@@ -25,7 +27,7 @@ fetch(​"http://localhost:3000/api/teddies")
         cardPrice.setAttribute('class', 'card-price')
         cardBtn.setAttribute('class', 'btn btn-primary stretched-link')
 
-        cardImg.src = "/images/" + teddies[i].url 
+        cardImg.src = teddies[i].imageUrl 
         cardTitle.textContent = teddies[i].name
         cardText.textContent = teddies [i].description
         cardPrice.textContent = teddies [i].price
@@ -40,4 +42,8 @@ fetch(​"http://localhost:3000/api/teddies")
         teddyList.appendChild(col);
     }
 })
-.catch (error => console.error(error)) 
+.catch (error => console.error(error))
+
+function goToTeddy(id){
+    window.location.href = "teddy.html?id=" + id;
+}
