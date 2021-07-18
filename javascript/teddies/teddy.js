@@ -1,15 +1,13 @@
-function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    let regex = new RegExp('[?&]' + name),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+function getParameterByName (name) {
+    const paramsString = window.location.search
+    const searchParams = new URLSearchParams(paramsString)
+
+    return searchParams.get(name)
 }
 
 const id = getParameterByName('id');
 
-fetch('http://localhost:3000/api/teddies' + id)
+fetch('http://localhost:3000/api/teddies/' + id)
 .then(response => {
     return response.json();
     })
@@ -17,6 +15,8 @@ fetch('http://localhost:3000/api/teddies' + id)
         console.log(teddies); 
 
         const teddy = document.getElementById('teddy');
+
+        const row1 = document.createElement('div')
 
         const cols1 = document.createElement('div');
         const col1 = document.createElement('div');
@@ -44,37 +44,49 @@ fetch('http://localhost:3000/api/teddies' + id)
         const buyBtnSpanI = document.createElement('i');
         const buyBtnSpan2 = document.createElement('span');
 
-        const detailDelivery1 = document.createElement('p');
-        const detailDelivery2 = document.createElement('p');
+        const detailDelivery1 = document.createElement('p')
+        const detailDelivery2 = document.createElement('p')
+        
+        const detailDeliverySpan1 = document.createElement('span')
+        const detailDeliverySpan2 = document.createElement('span')
 
 
         //text
-        pBtnSpanText.innerHTML = 'BUY NOW!';
-        buyBtnSpan2.innerHTML = 'ADD TO CART';
-        detailDelivery1.innerHTML = 'Standard delivery is 2-5 working days';
-        detailDelivery2.innerHTML = 'Next day delivery order is before 2pm ($6.25)';
-
+        pBtnSpanText.innerHTML = 'BUY NOW!'
+        buyBtnSpan2.innerHTML = 'ADD TO CART'
+        detailDeliverySpan1.innerHTML = 'Standard delivery'
+        detailDeliverySpan2.innerHTML = 'Next day delivery'
+        detailDelivery1.innerHTML = ' 2-5 working days'
+        detailDelivery2.innerHTML = ' order before 2pm ($6.25)'
+        
         //classes
 
+        row1.setAttribute('class', 'row')
+        
         cols1.setAttribute('class', 'columns' );
         col1.setAttribute('class', 'column');
 
-        ctnImage.setAttribute('class', 'thumbnail-container');
-        teddyImage.setAttribute('class', 'drift-demo-trigger');
+        ctnImage.setAttribute('id', 'ctnImage')
+        teddyImage.setAttribute('class', 'img-thumbnail');
 
         col2.setAttribute('class', 'column');
         details.setAttribute('class', 'details');
+        detailText1.setAttribute('class', 'price' )
+        detailText2.setAttribute('class', 'description')
 
         cols2.setAttribute('class', 'columns');
         col3.setAttribute('class', 'column');
+        col3.setAttribute('id', 'wishlist-container')
 
         pBtn.setAttribute('class', 'button');
         pBtnSpan.setAttribute('class', 'icon is-small');
         pBtnSpanI.setAttribute('class', 'fas fa-heart');
 
         col4.setAttribute('class', 'column');
-        buyBtn.setAttribute('class', 'button');
+        col4.setAttribute('id', 'buy-container')
+        buyBtn.setAttribute('class', 'button buy-button');
         buyBtnSpan.setAttribute('class', 'icon is-small');
+        buyBtnSpanI.setAttribute('class', 'fas fa-shopping-bag')
 
         detailDelivery1.setAttribute('class', 'small-text');
         detailDelivery2.setAttribute('class', 'small-text');
@@ -89,12 +101,12 @@ fetch('http://localhost:3000/api/teddies' + id)
 
         // order
 
-        teddy.appendChild(cols1);
+        teddy.appendChild(row1);
+
+        row1.appendChild(cols1)
 
         cols1.appendChild(col1);
         cols1.appendChild(col2);
-        cols1.appendChild(detailDelivery1);
-        cols1.appendChild(detailDelivery2);
 
         col1.appendChild(ctnImage);
         ctnImage.appendChild(teddyImage);

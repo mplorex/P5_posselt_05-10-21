@@ -19,9 +19,9 @@ ftrLink2.innerHTML = 'Instagram'
 ftrLink3.innerHTML = 'Twitter'
 
 ctnFooter.setAttribute('class', 'column bg-dark text-white')
-ftrLink11.setAttribute('class', 'fa fa-facebook')
-ftrLink22.setAttribute('class', 'fa fa-instagram')
-ftrLink33.setAttribute('class', 'fa fa-twitter')
+ftrLink11.setAttribute('class', 'fab fa-facebook')
+ftrLink22.setAttribute('class', 'fab fa-instagram')
+ftrLink33.setAttribute('class', 'fab fa-twitter')
 
 footer.appendChild(ctnFooter)
 ctnFooter.appendChild(ftrText)
