@@ -34,15 +34,15 @@ fetch('http://localhost:3000/api/teddies/' + id)
         const col3 = document.createElement('div');
 
         const pBtn = document.createElement('button');
+        const pBtnA = document.createElement('a')
         const pBtnSpan = document.createElement('span');
         const pBtnSpanI = document.createElement('i');
-        const pBtnSpanText = document.createElement('span');
 
         const col4 = document.createElement('div');
         const buyBtn = document.createElement('button');
+        const BuyBtnA = document.createElement('a');
         const buyBtnSpan = document.createElement('span');
         const buyBtnSpanI = document.createElement('i');
-        const buyBtnSpan2 = document.createElement('span');
 
         const detailDelivery1 = document.createElement('p')
         const detailDelivery2 = document.createElement('p')
@@ -52,8 +52,8 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
 
         //text
-        pBtnSpanText.innerHTML = 'BUY NOW!'
-        buyBtnSpan2.innerHTML = 'ADD TO CART'
+        pBtnSpanI.innerHTML = 'BUY NOW!'
+        buyBtnSpanI.innerHTML = 'ADD TO CART'
         detailDeliverySpan1.innerHTML = 'Standard delivery'
         detailDeliverySpan2.innerHTML = 'Next day delivery'
         detailDelivery1.innerHTML = ' 2-5 working days'
@@ -71,6 +71,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         col2.setAttribute('class', 'column');
         details.setAttribute('class', 'details');
+        detailTitle.setAttribute('class', 'title')
         detailText1.setAttribute('class', 'price' )
         detailText2.setAttribute('class', 'description')
 
@@ -79,12 +80,14 @@ fetch('http://localhost:3000/api/teddies/' + id)
         col3.setAttribute('id', 'wishlist-container')
 
         pBtn.setAttribute('class', 'button');
+        pBtnA.setAttribute('href', 'cart.html')
         pBtnSpan.setAttribute('class', 'icon is-small');
         pBtnSpanI.setAttribute('class', 'fas fa-heart');
 
         col4.setAttribute('class', 'column');
         col4.setAttribute('id', 'buy-container')
         buyBtn.setAttribute('class', 'button buy-button');
+        BuyBtnA.setAttribute('class', 'add-cart')
         buyBtnSpan.setAttribute('class', 'icon is-small');
         buyBtnSpanI.setAttribute('class', 'fas fa-shopping-bag')
 
@@ -120,15 +123,15 @@ fetch('http://localhost:3000/api/teddies/' + id)
         cols2.appendChild(col3);
         col3.appendChild(pBtn);
 
-        pBtn.appendChild(pBtnSpan);
+        pBtn.appendChild(pBtnA);
+        pBtnA.appendChild(pBtnSpan)
         pBtnSpan.appendChild(pBtnSpanI);
-        pBtn.appendChild(pBtnSpanText);
 
         cols2.appendChild(col4);
-        col4.appendChild(buyBtn);
+        col4.appendChild(BuyBtnA);
+        BuyBtnA.appendChild(buyBtn)
         buyBtn.appendChild(buyBtnSpan);
         buyBtnSpan.appendChild(buyBtnSpanI);
-        buyBtn.appendChild(buyBtnSpan2);
 
         console.log(teddy);
         })

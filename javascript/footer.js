@@ -18,7 +18,7 @@ ftrLink1.innerHTML = 'Facebook'
 ftrLink2.innerHTML = 'Instagram'
 ftrLink3.innerHTML = 'Twitter'
 
-ctnFooter.setAttribute('class', 'column bg-dark text-white')
+ctnFooter.setAttribute('class', 'column bckg text-white')
 ftrLink11.setAttribute('class', 'fab fa-facebook')
 ftrLink22.setAttribute('class', 'fab fa-instagram')
 ftrLink33.setAttribute('class', 'fab fa-twitter')

@@ -1,12 +1,12 @@
 const nav = document.getElementById('nav')
+const cartCheckout = document.getElementById('checkout')
 
-const bkg = document.createElement('div')
-const ctn = document.createElement('div')
-const row = document.createElement('div')
 const navi = document.createElement('nav')
+const ctn = document.createElement('div')
 
-const logoImgA = document.createElement('a')
+
 const logoImg = document.createElement('img')
+const logoA = document.createElement('a')
 const btn = document.createElement('button')
 const span = document.createElement('span')
 
@@ -17,8 +17,15 @@ const navItem1A = document.createElement('a')
 const navItem2 = document.createElement('li')
 const navItem2A = document.createElement('a')
 
+const basket = document.createElement('ul')
+const basketItem = document.createElement('li')
+const basketItemA = document.createElement('a')
+const basketItemASpan = document.createElement('span')
+
 navItem1A.innerHTML = 'Products'
 navItem2A.innerHTML = 'Cart'
+
+basketItemASpan.innerHTML = '0'
 
 //styling
 
@@ -26,23 +33,22 @@ navItem2A.innerHTML = 'Cart'
 
 //classes
 
-ctn.setAttribute('class', 'container')
-row.setAttribute('class', 'row')
-navi.setAttribute('class', 'col navbar navbar-expand-lg')
+navi.setAttribute('class', 'navbar navbar-expand-lg navbar-light')
+ctn.setAttribute('class', 'container-fluid')
 
-logoImgA.setAttribute('class', 'navbar-brand')
+logoA.setAttribute('class', 'navbar-brand')
 btn.setAttribute('class', 'navbar-toggler')
 btn.setAttribute('type', 'button')
 btn.setAttribute('data-toggle', 'collapse')
 btn.setAttribute('data-target', '#navbarContent')
-btn.setAttribute('aria-controls', 'navbarSupportedContent')
+btn.setAttribute('aria-controls', 'navbarCollapse')
 btn.setAttribute('aria-expanded', 'false')
 btn.setAttribute('aria-label', 'Toggle navigation')
 span.setAttribute('class', 'navbar-toggler-icon')
 
-navbar.setAttribute('id', 'navbarContent')
 navbar.setAttribute('class', 'collapse navbar-collapse')
-navItems.setAttribute('class', 'navbar-nav')
+navbar.setAttribute('id', 'navbarContent')
+navItems.setAttribute('class', 'navbar-nav mr-auto')
 navItem1.setAttribute('class', 'nav-item active')
 navItem1A.setAttribute('class', 'nav-link')
 navItem1A.setAttribute('href', 'index.html')
@@ -50,22 +56,29 @@ navItem2.setAttribute('class', 'nav-item')
 navItem2A.setAttribute('class', 'nav-link')
 navItem2A.setAttribute('href', 'cart.html')
 
+basketItem.setAttribute('class', 'cart')
+basketItemA.setAttribute('href', 'cart.html')
+
 logoImg.src = './images/logo.png'
 
 //layering
 
-nav.appendChild(bkg)
-bkg.appendChild(ctn)
-ctn.appendChild(row)
-row.appendChild(navi)
-navi.appendChild(logoImg)
-navi.appendChild(btn)
+nav.appendChild(navi)
+navi.appendChild(ctn)
+ctn.appendChild(logoImg)
+ctn.appendChild(logoA)
+logoA.appendChild(btn)
 btn.appendChild(span)
-navi.appendChild(navbar)
+ctn.appendChild(navbar)
 navbar.appendChild(navItems)
 navItems.appendChild(navItem1)
 navItem1.appendChild(navItem1A)
 navItems.appendChild(navItem2)
 navItem2.appendChild(navItem2A)
+
+navbar.appendChild(basket)
+basket.appendChild(basketItem)
+basketItem.appendChild(basketItemA)
+basketItemA.appendChild(basketItemASpan)
 
 console.log(nav);
