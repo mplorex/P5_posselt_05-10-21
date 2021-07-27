@@ -51,3 +51,10 @@ fetch('http://localhost:3000/api/teddies')
         }
     })
     .catch (error => console.error(error));
+
+    const colStyle = document.getElementById('teddies');
+
+    colStyle.style.display = "flex";
+    colStyle.style.justifyContent = "center";
+    
+    console.log(colStyle)
