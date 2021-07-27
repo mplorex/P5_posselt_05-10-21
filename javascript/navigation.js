@@ -17,15 +17,9 @@ const navItem1A = document.createElement('a')
 const navItem2 = document.createElement('li')
 const navItem2A = document.createElement('a')
 
-const basket = document.createElement('ul')
-const basketItem = document.createElement('li')
-const basketItemA = document.createElement('a')
-const basketItemASpan = document.createElement('span')
-
 navItem1A.innerHTML = 'Products'
 navItem2A.innerHTML = 'Cart'
 
-basketItemASpan.innerHTML = '0'
 
 //styling
 
