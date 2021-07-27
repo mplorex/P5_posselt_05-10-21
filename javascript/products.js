@@ -6,6 +6,7 @@ fetch('http://localhost:3000/api/teddies')
         const teddyList = document.getElementById('teddies');
         for (let i = 0; i < teddies.length; i++) {
             console.log(teddies[i]);
+            const ctn = document.createElement('div')
             const col = document.createElement('div');
             const card = document.createElement('div');
             const cardImg = document.createElement('img');
@@ -17,8 +18,11 @@ fetch('http://localhost:3000/api/teddies')
     
             cardBtn.innerHTML = "Buy Now!";
     
-            col.setAttribute('class', 'col-12 col-sm-4 mb-4');
+            ctn.setAttribute('class', 'container')
+            ctn.setAttribute('id', 'container')
+            col.setAttribute('class', 'col col-12 col-sm-4 mb-4');
             card.setAttribute('class', 'card');
+            card.setAttribute('id', 'card')
             cardImg.setAttribute('class', 'card-img-top');
             cardBody.setAttribute('class', 'card-body');
             cardTitle.setAttribute('class', 'card-title');
@@ -33,7 +37,9 @@ fetch('http://localhost:3000/api/teddies')
             cardTitle.textContent = teddies[i].name;
             cardText.textContent = teddies [i].description;
             cardPrice.textContent = teddies [i].price;
+
     
+            ctn.appendChild(col)
             col.appendChild(card);
             card.appendChild(cardImg);
             card.appendChild(cardBody);
@@ -45,4 +51,3 @@ fetch('http://localhost:3000/api/teddies')
         }
     })
     .catch (error => console.error(error));
-    

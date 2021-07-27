@@ -1,34 +1,36 @@
 const teddyData = [
     {
-        "title": 'Teddy 1',
+        "name": 'Teddy 1',
         "color": 'green',
         "price": 5800,
         "quantity": 18,
         "_id": "5be9c8541c9d440000665243"
     },
     {
-        "title": 'Teddy 2',
+        "name": 'Teddy 2',
         "color": 'blue',
         "price": 1800,
         "quantity": 3,
         "_id": "5beaa8bf1c9d440000a57d94"
     },
     {
-        "title": 'Teddy 2',
+        "name": 'Teddy 2',
         "color": 'green',
         "price": 1800,
         "quantity": 1,
         "_id": "5beaa8bf1c9d440000a57d94"
     },
     {
-        "title": 'Teddy 1',
+        "name": 'Teddy 1',
         "color": 'blue',
         "price": 5800,
         "quantity": 19,
         "_id": "5be9c8541c9d440000665243"
     }
 
+
 ]
+
 
 for(let i = 0; i > teddyData.length; i++){
     console.log(teddyData)
@@ -51,13 +53,13 @@ for(let i = 0; i > teddyData.length; i++){
     const cartBodyRowPrice = document.createElement('td');
     const cartBodyRowQuantity = document.createElement('td');
 
-    cartRowTitle.innerHTML = 'Title';
+    cartRowTitle.innerHTML = 'Name';
     cartRowColor.innerHTML = 'Color';
     cartRowPrice.innerHTML = 'Price';
     cartRowQuantity.innerHTML = 'Quantity';
 
 
-    cartBodyRowHeader.textContent = teddyData[i].title;
+    cartBodyRowHeader.textContent = teddyData[i].name;
     cartRowColor.textContent = teddyData[i].color;
     cartBodyRowPrice.textContent = teddyData[i].price;
     cartBodyRowQuantity.textContent = teddyData[i].quantity;
@@ -87,7 +89,9 @@ for(let i = 0; i > teddyData.length; i++){
     cartBodyRow.appendChild(cartBodyRowPrice)
     cartBodyRow.appendChild(cartBodyRowQuantity)
 
-    console.log(cart)
+    console.log(cart);
 
 }
 console.log(teddyData)
+
+

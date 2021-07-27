@@ -20,11 +20,6 @@ const navItem2A = document.createElement('a')
 navItem1A.innerHTML = 'Products'
 navItem2A.innerHTML = 'Cart'
 
-
-//styling
-
-
-
 //classes
 
 navi.setAttribute('class', 'navbar navbar-expand-lg navbar-light')
@@ -50,9 +45,6 @@ navItem2.setAttribute('class', 'nav-item')
 navItem2A.setAttribute('class', 'nav-link')
 navItem2A.setAttribute('href', 'cart.html')
 
-basketItem.setAttribute('class', 'cart')
-basketItemA.setAttribute('href', 'cart.html')
-
 logoImg.src = './images/logo.png'
 
 //layering
@@ -69,10 +61,5 @@ navItems.appendChild(navItem1)
 navItem1.appendChild(navItem1A)
 navItems.appendChild(navItem2)
 navItem2.appendChild(navItem2A)
-
-navbar.appendChild(basket)
-basket.appendChild(basketItem)
-basketItem.appendChild(basketItemA)
-basketItemA.appendChild(basketItemASpan)
 
 console.log(nav);
