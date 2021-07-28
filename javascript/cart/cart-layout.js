@@ -33,8 +33,7 @@ const teddyData = [
 
 
 for(let i = 0; i > teddyData.length; i++){
-    console.log(teddyData)
-
+    console.log(teddyData[i])
 
     cartBodyRowHeader.textContent = teddyData[i].name;
     cartRowColor.textContent = teddyData[i].color;
