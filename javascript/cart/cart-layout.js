@@ -35,6 +35,14 @@ const teddyData = [
 for(let i = 0; i > teddyData.length; i++){
     console.log(teddyData)
 
+
+    cartBodyRowHeader.textContent = teddyData[i].name;
+    cartRowColor.textContent = teddyData[i].color;
+    cartBodyRowPrice.textContent = teddyData[i].price;
+    cartBodyRowQuantity.textContent = teddyData[i].quantity;
+
+}
+
     const cart = document.getElementById('cart')
 
     const cartTable = document.createElement('table');
@@ -57,13 +65,6 @@ for(let i = 0; i > teddyData.length; i++){
     cartRowColor.innerHTML = 'Color';
     cartRowPrice.innerHTML = 'Price';
     cartRowQuantity.innerHTML = 'Quantity';
-
-
-    cartBodyRowHeader.textContent = teddyData[i].name;
-    cartRowColor.textContent = teddyData[i].color;
-    cartBodyRowPrice.textContent = teddyData[i].price;
-    cartBodyRowQuantity.textContent = teddyData[i].quantity;
-
 
     cartTable.setAttribute('class', 'table')
     cartRowTitle.setAttribute('scope', 'col')
@@ -91,7 +92,6 @@ for(let i = 0; i > teddyData.length; i++){
 
     console.log(cart);
 
-}
-console.log(teddyData)
+    console.log(teddyData)
 
 
