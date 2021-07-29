@@ -15,13 +15,23 @@ const ftrLink33 = document.createElement('i')
 
 ftrBTitle.innerHTML = 'Orinoco'
 ftrDescription.innerHTML = 'Orinoco offers specific, themed apps which each sell one group of products.'
+ftrLinks.innerHTML = "Follow us on our Social Medias: "
 ftrLink1.innerHTML = 'Facebook'
 ftrLink2.innerHTML = 'Instagram'
 ftrLink3.innerHTML = 'Twitter'
 
 ctnFooter.setAttribute('class', 'column bckg text-white')
+ftrLink1.setAttribute('href', 'https://facebook.com')
+ftrLink1.setAttribute('class', 'text-white')
+ftrLink1.setAttribute('style', 'text-decoration:none')
 ftrLink11.setAttribute('class', 'fab fa-facebook')
+ftrLink2.setAttribute('href', 'https://instagram.com')
+ftrLink2.setAttribute('class', 'text-white')
+ftrLink2.setAttribute('style', 'text-decoration:none')
 ftrLink22.setAttribute('class', 'fab fa-instagram')
+ftrLink3.setAttribute('href', 'https://twitter.com')
+ftrLink3.setAttribute('class', 'text-white')
+ftrLink3.setAttribute('style', 'text-decoration:none')
 ftrLink33.setAttribute('class', 'fab fa-twitter')
 
 footer.appendChild(ctnFooter)
