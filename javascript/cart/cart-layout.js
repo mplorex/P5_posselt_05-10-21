@@ -32,16 +32,6 @@ const teddyData = [
 ]
 
 
-for(let i = 0; i > teddyData.length; i++){
-    console.log(teddyData[i])
-
-    cartBodyRowHeader.textContent = teddyData[i].name;
-    cartRowColor.textContent = teddyData[i].color;
-    cartBodyRowPrice.textContent = teddyData[i].price;
-    cartBodyRowQuantity.textContent = teddyData[i].quantity;
-
-}
-
     const cart = document.getElementById('cart')
 
     const cartTable = document.createElement('table');
@@ -54,6 +44,20 @@ for(let i = 0; i > teddyData.length; i++){
     const cartRowQuantity = document.createElement('th');
 
     const cartBody = document.createElement('tbody');
+
+    cart.appendChild(cartTable)
+
+    cartTable.appendChild(cartThead)
+    cartTable.appendChild(cartBody)
+
+    cartThead.appendChild(cartRow)
+    cartRow.appendChild(cartRowTitle)
+    cartRow.appendChild(cartRowColor)
+    cartRow.appendChild(cartRowPrice)
+    cartRow.appendChild(cartRowQuantity)
+
+
+teddyData.forEach((teddy) => {
     const cartBodyRow = document.createElement('tr');
     const cartBodyRowHeader = document.createElement('th');
     const cartBodyRowColor = document.createElement('td');
@@ -72,25 +76,16 @@ for(let i = 0; i > teddyData.length; i++){
     cartRowQuantity.setAttribute('scope', 'col')
     cartBodyRowHeader.setAttribute('scope', 'row')
 
-    cart.appendChild(cartTable)
-
-    cartTable.appendChild(cartThead)
-    cartTable.appendChild(cartBody)
-
-    cartThead.appendChild(cartRow)
-    cartRow.appendChild(cartRowTitle)
-    cartRow.appendChild(cartRowColor)
-    cartRow.appendChild(cartRowPrice)
-    cartRow.appendChild(cartRowQuantity)
+    cartBodyRowHeader.textContent = teddy.name;
+    cartBodyRowColor.textContent = teddy.color;
+    cartBodyRowPrice.textContent = teddy.price;
+    cartBodyRowQuantity.textContent = teddy.quantity;
 
     cartBody.appendChild(cartBodyRow)
     cartBodyRow.appendChild(cartBodyRowHeader)
     cartBodyRow.appendChild(cartBodyRowColor)
     cartBodyRow.appendChild(cartBodyRowPrice)
     cartBodyRow.appendChild(cartBodyRowQuantity)
-
-    console.log(cart);
-
-    console.log(teddyData)
+});
 
 
