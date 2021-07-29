@@ -27,9 +27,13 @@ const teddyData = [
         "quantity": 19,
         "_id": "5be9c8541c9d440000665243"
     }
-
+    
 
 ]
+
+function addTeddy() {
+
+}
 
 
     const cart = document.getElementById('cart')
@@ -44,6 +48,11 @@ const teddyData = [
     const cartRowQuantity = document.createElement('th');
 
     const cartBody = document.createElement('tbody');
+
+    cartRowTitle.innerHTML = 'Name';
+    cartRowColor.innerHTML = 'Color';
+    cartRowPrice.innerHTML = 'Price';
+    cartRowQuantity.innerHTML = 'Quantity';
 
     cart.appendChild(cartTable)
 
@@ -64,11 +73,6 @@ teddyData.forEach((teddy) => {
     const cartBodyRowPrice = document.createElement('td');
     const cartBodyRowQuantity = document.createElement('td');
 
-    cartRowTitle.innerHTML = 'Name';
-    cartRowColor.innerHTML = 'Color';
-    cartRowPrice.innerHTML = 'Price';
-    cartRowQuantity.innerHTML = 'Quantity';
-
     cartTable.setAttribute('class', 'table')
     cartRowTitle.setAttribute('scope', 'col')
     cartRowColor.setAttribute('scope', 'col')
@@ -88,4 +92,5 @@ teddyData.forEach((teddy) => {
     cartBodyRow.appendChild(cartBodyRowQuantity)
 });
 
+console.log(teddyData)
 

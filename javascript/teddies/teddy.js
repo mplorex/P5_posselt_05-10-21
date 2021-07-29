@@ -50,6 +50,9 @@ fetch('http://localhost:3000/api/teddies/' + id)
         const detailDeliverySpan1 = document.createElement('span')
         const detailDeliverySpan2 = document.createElement('span')
 
+        buyBtn.addEventListener('click', ()=>{
+            
+        })
 
         //text
         pBtnSpanI.innerHTML = 'BUY NOW!'
