@@ -1,14 +1,19 @@
-const cart = [{}];
-function addToCart (norbert, arnold, lc, gustav, garfunkel) {
+let cartData = [];
+function addToCart (product) {
+    if (localStorage.getItem("cartData")){
+        cartData = JSON.parse(localStorage.getItem("cartData"));
+    }
     let productLoad = false
 
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i]._id === norbert._id) {
+    for (let i = 0; i < cartData.length; i++) {
+        if (cartData[i]._id === product._id) {
             productLoad = true
-            cart[i].quantity = cart[i].quantity +1
+            cartData[i].quantity = cartData[i].quantity +1
         }
     }
-    if (!productExists) {
-        cart.push(norbert)
+    if (!productLoad) {
+        product.quantity = 1;
+        cartData.push(product)
     }
+    localStorage.setItem("cartData", JSON.stringify(cartData))
 }
