@@ -1,40 +1,7 @@
-const teddyData = [
-    {
-        "name": 'Teddy 1',
-        "color": 'green',
-        "price": 5800,
-        "quantity": 18,
-        "_id": "5be9c8541c9d440000665243"
-    },
-    {
-        "name": 'Teddy 2',
-        "color": 'blue',
-        "price": 1800,
-        "quantity": 3,
-        "_id": "5beaa8bf1c9d440000a57d94"
-    },
-    {
-        "name": 'Teddy 2',
-        "color": 'green',
-        "price": 1800,
-        "quantity": 1,
-        "_id": "5beaa8bf1c9d440000a57d94"
-    },
-    {
-        "name": 'Teddy 1',
-        "color": 'blue',
-        "price": 5800,
-        "quantity": 19,
-        "_id": "5be9c8541c9d440000665243"
-    }
-    
 
-]
 
-function addTeddy() {
-
-}
-
+const teddyData = JSON.parse(localStorage.getItem("cartData"));
+console.log(teddyData)
 
     const cart = document.getElementById('cart')
 
