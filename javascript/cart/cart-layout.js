@@ -61,3 +61,4 @@ teddyData.forEach((teddy) => {
 
 console.log(teddyData)
 
+
