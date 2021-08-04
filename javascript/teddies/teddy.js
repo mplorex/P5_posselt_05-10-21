@@ -44,23 +44,13 @@ fetch('http://localhost:3000/api/teddies/' + id)
         const buyBtnSpan = document.createElement('span');
         const buyBtnSpanI = document.createElement('i');
 
-        const detailDelivery1 = document.createElement('p')
-        const detailDelivery2 = document.createElement('p')
-        
-        const detailDeliverySpan1 = document.createElement('span')
-        const detailDeliverySpan2 = document.createElement('span')
-
         buyBtn.addEventListener('click', ()=>{
             addToCart(teddies);
         })
 
         //text
-        pBtnSpanI.innerHTML = 'BUY NOW!'
+        pBtnSpanI.innerHTML = 'CHECKOUT'
         buyBtnSpanI.innerHTML = 'ADD TO CART'
-        detailDeliverySpan1.innerHTML = 'Standard delivery'
-        detailDeliverySpan2.innerHTML = 'Next day delivery'
-        detailDelivery1.innerHTML = ' 2-5 working days'
-        detailDelivery2.innerHTML = ' order before 2pm ($6.25)'
         
         //classes
 
@@ -93,9 +83,6 @@ fetch('http://localhost:3000/api/teddies/' + id)
         BuyBtnA.setAttribute('class', 'add-cart')
         buyBtnSpan.setAttribute('class', 'icon is-small');
         buyBtnSpanI.setAttribute('class', 'fas fa-shopping-bag')
-
-        detailDelivery1.setAttribute('class', 'small-text');
-        detailDelivery2.setAttribute('class', 'small-text');
 
 
         //teddy
