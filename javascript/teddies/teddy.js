@@ -44,6 +44,13 @@ fetch('http://localhost:3000/api/teddies/' + id)
         const buyBtnSpan = document.createElement('span');
         const buyBtnSpanI = document.createElement('i');
 
+        const select = document.createElement('select')
+        const selectOption1 = document.createElement('option')
+        const selectOption2 = document.createElement('option')
+        const selectOption3 = document.createElement('option')
+        const selectOption4 = document.createElement('option')
+        const selectOption5 = document.createElement('option')
+
         buyBtn.addEventListener('click', ()=>{
             addToCart(teddies);
         })
@@ -51,6 +58,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
         //text
         pBtnSpanI.innerHTML = 'CHECKOUT'
         buyBtnSpanI.innerHTML = 'ADD TO CART'
+        selectOption1.innerHTML = '--Select a color--'
         
         //classes
 
@@ -68,6 +76,8 @@ fetch('http://localhost:3000/api/teddies/' + id)
         detailText1.setAttribute('class', 'price' )
         detailText2.setAttribute('class', 'description')
 
+
+
         cols2.setAttribute('class', 'columns');
         col3.setAttribute('class', 'column');
         col3.setAttribute('id', 'wishlist-container')
@@ -84,6 +94,9 @@ fetch('http://localhost:3000/api/teddies/' + id)
         buyBtnSpan.setAttribute('class', 'icon is-small');
         buyBtnSpanI.setAttribute('class', 'fas fa-shopping-bag')
 
+        select.setAttribute('id', 'color-select')
+        selectOption2.setAttribute('value', 'color')
+
 
         //teddy
 
@@ -91,6 +104,10 @@ fetch('http://localhost:3000/api/teddies/' + id)
         detailTitle.textContent = teddies.name;
         detailText1.textContent = teddies.description;
         detailText2.textContent = teddies.price;
+        selectOption2.textContent = teddies.colors;
+        selectOption3.textContent = teddies.colors;
+        selectOption4.textContent = teddies.colors;
+        selectOption5.textContent = teddies.colors;
 
         // order
 
@@ -108,7 +125,14 @@ fetch('http://localhost:3000/api/teddies/' + id)
         details.appendChild(detailTitle);
         details.appendChild(detailText1);
         details.appendChild(detailText2);
+        details.appendChild(select)
         details.appendChild(cols2);
+
+        select.appendChild(selectOption1)
+        select.appendChild(selectOption2)
+        select.appendChild(selectOption3)
+        select.appendChild(selectOption4)
+        select.appendChild(selectOption5)
 
         cols2.appendChild(col3);
         col3.appendChild(pBtn);

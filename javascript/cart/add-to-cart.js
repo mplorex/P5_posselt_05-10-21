@@ -3,15 +3,15 @@ function addToCart (product) {
     if (localStorage.getItem("cartData")){
         cartData = JSON.parse(localStorage.getItem("cartData"));
     }
-    let productLoad = false
+    let productExists = false
 
     for (let i = 0; i < cartData.length; i++) {
         if (cartData[i]._id === product._id) {
-            productLoad = true
+            productExists = true
             cartData[i].quantity = cartData[i].quantity +1
         }
     }
-    if (!productLoad) {
+    if (!productExists) {
         product.quantity = 1;
         cartData.push(product)
     }
