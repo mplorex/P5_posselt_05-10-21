@@ -1,15 +1,18 @@
 const checkoutBtns = document.getElementById('checkout-btns')
 
-
 const checkoutBtn = document.createElement('button')
+const checkoutLink = document.createElement('a')
 const emptyCartBtn = document.createElement('button')
+
+checkoutLink.setAttribute('href', 'checkout.html')
 
 emptyCartBtn.addEventListener('click', emptyCart);
 
 checkoutBtn.innerHTML = 'Checkout' 
 emptyCartBtn.innerHTML = 'Empty cart'
 
-checkoutBtns.appendChild(checkoutBtn)
+checkoutBtns.appendChild(checkoutLink)
+checkoutLink.appendChild(checkoutBtn)
 checkoutBtns.appendChild(emptyCartBtn)
 
 function emptyCart() {
