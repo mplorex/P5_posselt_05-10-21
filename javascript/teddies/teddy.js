@@ -16,8 +16,6 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         const teddy = document.getElementById('teddy');
 
-        const row1 = document.createElement('div')
-
         const cols1 = document.createElement('div');
         const col1 = document.createElement('div');
 
@@ -57,8 +55,6 @@ fetch('http://localhost:3000/api/teddies/' + id)
         selectOption1.innerHTML = '--Select a color--'
         
         //classes
-
-        row1.setAttribute('class', 'row')
         
         cols1.setAttribute('class', 'columns' );
         col1.setAttribute('class', 'column');
@@ -102,9 +98,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         // order
 
-        teddy.appendChild(row1);
-
-        row1.appendChild(cols1)
+        teddy.appendChild(cols1);
 
         cols1.appendChild(col1);
         cols1.appendChild(col2);
