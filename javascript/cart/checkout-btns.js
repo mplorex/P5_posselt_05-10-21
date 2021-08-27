@@ -5,6 +5,8 @@ const checkoutLink = document.createElement('a')
 const emptyCartBtn = document.createElement('button')
 
 checkoutLink.setAttribute('href', 'checkout.html')
+checkoutBtn.setAttribute('class', 'btn-primary m-2')
+emptyCartBtn.setAttribute('class', 'btn-primary m-2')
 
 emptyCartBtn.addEventListener('click', emptyCart);
 

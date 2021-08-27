@@ -1,36 +1,38 @@
 
 
 const teddyData = JSON.parse(localStorage.getItem("cartData"));
-console.log(teddyData)
 
-    const cart = document.getElementById('cart')
+const cart = document.getElementById('cart')
 
-    const cartTable = document.createElement('table');
-    const cartThead = document.createElement('thead');
+const cartTable = document.createElement('table');
+const cartThead = document.createElement('thead');
 
-    const cartRow = document.createElement('tr');
-    const cartRowTitle = document.createElement('th');
-    const cartRowColor = document.createElement('th');
-    const cartRowPrice = document.createElement('th');
-    const cartRowQuantity = document.createElement('th');
+const cartRow = document.createElement('tr');
+const cartRowTitle = document.createElement('th');
+const cartRowColor = document.createElement('th');
+const cartRowPrice = document.createElement('th');
+const cartRowQuantity = document.createElement('th');
+const cartRowTotal = document.createElement('th');
 
-    const cartBody = document.createElement('tbody');
+const cartBody = document.createElement('tbody');
 
-    cartRowTitle.innerHTML = 'Name';
-    cartRowColor.innerHTML = 'Color';
-    cartRowPrice.innerHTML = 'Price';
-    cartRowQuantity.innerHTML = 'Quantity';
+cartRowTitle.innerHTML = 'Name';
+cartRowColor.innerHTML = 'Color';
+cartRowPrice.innerHTML = 'Price';
+cartRowQuantity.innerHTML = 'Quantity';
+cartRowTotal.innerHTML = 'Total';
 
-    cart.appendChild(cartTable)
+cart.appendChild(cartTable)
 
-    cartTable.appendChild(cartThead)
-    cartTable.appendChild(cartBody)
+cartTable.appendChild(cartThead)
+cartTable.appendChild(cartBody)
 
-    cartThead.appendChild(cartRow)
-    cartRow.appendChild(cartRowTitle)
-    cartRow.appendChild(cartRowColor)
-    cartRow.appendChild(cartRowPrice)
-    cartRow.appendChild(cartRowQuantity)
+cartThead.appendChild(cartRow)
+cartRow.appendChild(cartRowTitle)
+cartRow.appendChild(cartRowColor)
+cartRow.appendChild(cartRowPrice)
+cartRow.appendChild(cartRowQuantity)
+cartRow.appendChild(cartRowTotal)
 
 
 teddyData.forEach((teddy) => {
@@ -39,16 +41,18 @@ teddyData.forEach((teddy) => {
     const cartBodyRowColor = document.createElement('td');
     const cartBodyRowPrice = document.createElement('td');
     const cartBodyRowQuantity = document.createElement('td');
+    const cartBodyRowTotal = document.createElement('td');
 
     cartTable.setAttribute('class', 'table')
     cartRowTitle.setAttribute('scope', 'col')
     cartRowColor.setAttribute('scope', 'col')
     cartRowPrice.setAttribute('scope', 'col')
     cartRowQuantity.setAttribute('scope', 'col')
+    cartRowTotal.setAttribute('scope', 'col')
     cartBodyRowHeader.setAttribute('scope', 'row')
 
     cartBodyRowHeader.textContent = teddy.name;
-    cartBodyRowColor.textContent = teddy.color;
+    cartBodyRowColor.textContent = teddy.colors;
     cartBodyRowPrice.textContent = teddy.price;
     cartBodyRowQuantity.textContent = teddy.quantity;
 
@@ -57,6 +61,7 @@ teddyData.forEach((teddy) => {
     cartBodyRow.appendChild(cartBodyRowColor)
     cartBodyRow.appendChild(cartBodyRowPrice)
     cartBodyRow.appendChild(cartBodyRowQuantity)
+    cartBodyRow.appendChild(cartBodyRowTotal)
 });
 
 console.log(teddyData)
