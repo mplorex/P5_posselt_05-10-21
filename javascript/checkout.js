@@ -11,7 +11,7 @@ const formRow = document.createElement('div');
 const formColFirst = document.createElement('div');
 const formLabelFirst = document.createElement('label');
 const formInputFirst = document.createElement('input');
-const formFeedbackFirst = document.createElement('div')
+const formFeedbackFirst = document.createElement('div');
 
 const formColLast = document.createElement('div');
 const formLabelLast = document.createElement('label');
@@ -70,6 +70,7 @@ formLabelFirst.setAttribute('for', 'firstName');
 formInputFirst.setAttribute('type', 'text');
 formInputFirst.setAttribute('class', 'form-control');
 formInputFirst.setAttribute('id', 'firstName');
+formInputFirst.setAttribute('placeholder', 'Bob')
 formFeedbackFirst.setAttribute('class', 'invalid-feedback');
 
 formColLast.setAttribute('class', 'col-md-6 mb-3');
@@ -77,6 +78,7 @@ formLabelLast.setAttribute('for', 'lastName');
 formInputLast.setAttribute('type', 'text');
 formInputLast.setAttribute('class', 'form-control');
 formInputLast.setAttribute('id', 'lastName');
+formInputLast.setAttribute('placeholder', 'Smith')
 formFeedbackLast.setAttribute('class', 'invalid-feedback')
 
 formEmail.setAttribute('class', 'mb-3');
@@ -102,15 +104,17 @@ formLabelCity.setAttribute('for', 'city');
 formInputCity.setAttribute('type', 'text');
 formInputCity.setAttribute('class', 'form-control');
 formInputCity.setAttribute('id', 'city');
+formInputCity.setAttribute('placeholder', 'Miami')
 formFeedbackCity.setAttribute('class', 'invalid-feedback');
 formColZip.setAttribute('class', 'col-md-3 mb-3');
 formLabelZip.setAttribute('for', 'zipcode');
 formInputZip.setAttribute('type', 'text');
 formInputZip.setAttribute('class', 'form-control');
 formInputZip.setAttribute('id', 'zipcode');
+formInputZip.setAttribute('placeholder', '86657')
 formFeedbackZip.setAttribute('class', 'invalid-feedback');
 
-formButton.setAttribute('class', 'btn-primary btn-lg btn-block');
+formButton.setAttribute('class', 'btn-primary btn-lg btn-block text-white');
 formButton.setAttribute('type' ,'submit');
 
 formCheckout.appendChild(checkoutCtn);
