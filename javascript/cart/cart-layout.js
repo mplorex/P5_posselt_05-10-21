@@ -34,6 +34,8 @@ cartRow.appendChild(cartRowPrice)
 cartRow.appendChild(cartRowQuantity)
 cartRow.appendChild(cartRowTotal)
 
+let totalPrice = 
+
 
 teddyData.forEach((teddy) => {
     const cartBodyRow = document.createElement('tr');
@@ -48,7 +50,7 @@ teddyData.forEach((teddy) => {
     cartRowColor.setAttribute('scope', 'col')
     cartRowPrice.setAttribute('scope', 'col')
     cartRowQuantity.setAttribute('scope', 'col')
-    cartRowTotal.setAttribute('scope', 'col')
+    cartRowTotal.setAttribute('scope', 'col row-total')
     cartBodyRowHeader.setAttribute('scope', 'row')
 
     cartBodyRowHeader.textContent = teddy.name;

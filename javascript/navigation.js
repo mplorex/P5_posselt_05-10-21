@@ -1,7 +1,5 @@
 const nav = document.getElementById('nav')
-const cartCheckout = document.getElementById('checkout')
 
-const navi = document.createElement('nav')
 const ctn = document.createElement('div')
 
 
@@ -22,7 +20,6 @@ navItem2A.innerHTML = 'Cart'
 
 //classes
 
-navi.setAttribute('class', 'navbar navbar-expand-lg navbar-light')
 ctn.setAttribute('class', 'container-fluid')
 
 logoA.setAttribute('class', 'navbar-brand')
@@ -49,8 +46,7 @@ logoImg.src = './images/logo.png'
 
 //layering
 
-nav.appendChild(navi)
-navi.appendChild(ctn)
+nav.appendChild(ctn)
 ctn.appendChild(logoImg)
 ctn.appendChild(logoA)
 logoA.appendChild(btn)
