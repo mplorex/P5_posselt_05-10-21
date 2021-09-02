@@ -12,7 +12,6 @@ const cartRowTitle = document.createElement('th');
 const cartRowColor = document.createElement('th');
 const cartRowPrice = document.createElement('th');
 const cartRowQuantity = document.createElement('th');
-const cartRowTotal = document.createElement('th');
 
 const cartBody = document.createElement('tbody');
 
@@ -20,7 +19,6 @@ cartRowTitle.innerHTML = 'Name';
 cartRowColor.innerHTML = 'Color';
 cartRowPrice.innerHTML = 'Price';
 cartRowQuantity.innerHTML = 'Quantity';
-cartRowTotal.innerHTML = 'Total';
 
 cart.appendChild(cartTable)
 
@@ -32,9 +30,6 @@ cartRow.appendChild(cartRowTitle)
 cartRow.appendChild(cartRowColor)
 cartRow.appendChild(cartRowPrice)
 cartRow.appendChild(cartRowQuantity)
-cartRow.appendChild(cartRowTotal)
-
-let totalPrice = 
 
 
 teddyData.forEach((teddy) => {
@@ -50,7 +45,6 @@ teddyData.forEach((teddy) => {
     cartRowColor.setAttribute('scope', 'col')
     cartRowPrice.setAttribute('scope', 'col')
     cartRowQuantity.setAttribute('scope', 'col')
-    cartRowTotal.setAttribute('scope', 'col row-total')
     cartBodyRowHeader.setAttribute('scope', 'row')
 
     cartBodyRowHeader.textContent = teddy.name;

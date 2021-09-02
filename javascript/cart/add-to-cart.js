@@ -1,10 +1,13 @@
 let cartData = [];
+
+if (localStorage.getItem("cartData")){
+    cartData = JSON.parse(localStorage.getItem("cartData"));
+}
+
 function addToCart (product) {
     let colorTag = document.getElementById('color-select');
     if(colorTag.value != '--Select a color--'){
-        if (localStorage.getItem("cartData")){
-            cartData = JSON.parse(localStorage.getItem("cartData"));
-        }
+
         let productExists = false
 
         for (let i = 0; i < cartData.length; i++) {
@@ -20,7 +23,17 @@ function addToCart (product) {
         }
         console.log(cartData);
     localStorage.setItem("cartData", JSON.stringify(cartData))
+    cartData = JSON.parse(localStorage.getItem('cartData'))
     } else{
     alert ('Please select a color!')
     }
 }
+
+function cartTotal(){
+    let cartTotal = 0;
+    for(let i in cartData) {
+      cartTotal += cartData[i].price * cartData[i].quantity;
+    }
+    return cartTotal;
+}
+console.log(cartTotal());
