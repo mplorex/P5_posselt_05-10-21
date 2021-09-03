@@ -38,7 +38,6 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         const col4 = document.createElement('div');
         const buyBtn = document.createElement('button');
-        const BuyBtnA = document.createElement('a');
         const buyBtnSpan = document.createElement('span');
         const buyBtnSpanI = document.createElement('i');
 
@@ -46,12 +45,12 @@ fetch('http://localhost:3000/api/teddies/' + id)
         const selectOption1 = document.createElement('option')
 
         buyBtn.addEventListener('click', ()=>{
-            addToCart(teddies);
+            addToCart(teddies, select.value);
         })
 
         //text
         pBtnSpanI.innerHTML = 'CHECKOUT'
-        buyBtnSpanI.innerHTML = 'ADD TO CART'
+        buyBtn.innerHTML = 'ADD TO CART'
         selectOption1.innerHTML = '--Select a color--'
         
         //classes
@@ -81,8 +80,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         col4.setAttribute('class', 'column');
         col4.setAttribute('id', 'buy-container')
-        buyBtn.setAttribute('class', 'button buy-button');
-        BuyBtnA.setAttribute('class', 'add-cart')
+        buyBtn.setAttribute('class', 'btn btn-primary');
         buyBtnSpan.setAttribute('class', 'icon is-small');
         buyBtnSpanI.setAttribute('class', 'fas fa-shopping-bag')
 
@@ -128,8 +126,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
         pBtnSpan.appendChild(pBtnSpanI);
 
         cols2.appendChild(col4);
-        col4.appendChild(BuyBtnA);
-        BuyBtnA.appendChild(buyBtn)
+        col4.appendChild(buyBtn);
         buyBtn.appendChild(buyBtnSpan);
         buyBtnSpan.appendChild(buyBtnSpanI);
 

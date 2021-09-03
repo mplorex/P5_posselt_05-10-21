@@ -71,6 +71,7 @@ formInputFirst.setAttribute('type', 'text');
 formInputFirst.setAttribute('class', 'form-control');
 formInputFirst.setAttribute('id', 'firstName');
 formInputFirst.setAttribute('placeholder', 'Bob')
+formInputFirst.required = true;
 formFeedbackFirst.setAttribute('class', 'invalid-feedback');
 
 formColLast.setAttribute('class', 'col-md-6 mb-3');
