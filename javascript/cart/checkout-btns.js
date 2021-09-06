@@ -5,7 +5,7 @@ const checkoutLink = document.createElement('a')
 const emptyCartBtn = document.createElement('button')
 const cartRowTotal = document.createElement('div')
 
-checkoutLink.setAttribute('href', 'checkout.html')
+checkoutLink.setAttribute('href', 'checkout-form.html')
 checkoutBtn.setAttribute('class', 'btn-primary m-2')
 emptyCartBtn.setAttribute('class', 'btn-primary m-2')
 cartRowTotal.setAttribute('id', 'cartTotal')
