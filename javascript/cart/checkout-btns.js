@@ -1,26 +1,24 @@
 const checkoutBtns = document.getElementById('checkout-btns')
 
 const checkoutBtn = document.createElement('button')
-const checkoutLink = document.createElement('a')
-const emptyCartBtn = document.createElement('button')
+const addToCartBtn = document.createElement('button')
 const cartRowTotal = document.createElement('div')
 
-checkoutLink.setAttribute('href', 'checkout-form.html')
+checkoutBtn.setAttribute('href', 'checkout-form.html')
 checkoutBtn.setAttribute('class', 'btn-primary m-2')
-emptyCartBtn.setAttribute('class', 'btn-primary m-2')
+addToCartBtn.setAttribute('class', 'btn-primary m-2')
 cartRowTotal.setAttribute('id', 'cartTotal')
 
 const priceTotal = document.getElementById('cartTotal')
 
-emptyCartBtn.addEventListener('click', emptyCart);
+addToCartBtn.addEventListener('click', emptyCart);
 
 checkoutBtn.innerHTML = 'Checkout' 
-emptyCartBtn.innerHTML = 'Empty cart'
+addToCartBtn.innerHTML = 'Empty cart'
 cartRowTotal.innerHTML = '<b>Total: </b>' + cartTotal();
 
-checkoutBtns.appendChild(checkoutLink)
-checkoutLink.appendChild(checkoutBtn)
-checkoutBtns.appendChild(emptyCartBtn)
+checkoutBtns.appendChild(checkoutBtn)
+checkoutBtns.appendChild(addToCartBtn)
 checkoutBtns.appendChild(cartRowTotal)
 
 
