@@ -33,13 +33,9 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         const pBtn = document.createElement('button');
         const pBtnA = document.createElement('a')
-        const pBtnSpan = document.createElement('span');
-        const pBtnSpanI = document.createElement('i');
 
         const col4 = document.createElement('div');
         const buyBtn = document.createElement('button');
-        const buyBtnSpan = document.createElement('span');
-        const buyBtnSpanI = document.createElement('i');
 
         const select = document.createElement('select')
         const selectOption1 = document.createElement('option')
@@ -49,7 +45,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
         })
 
         //text
-        pBtnSpanI.innerHTML = 'CHECKOUT'
+        pBtn.innerHTML = 'CHECKOUT'
         buyBtn.innerHTML = 'ADD TO CART'
         selectOption1.innerHTML = '--Select a color--'
         
@@ -67,22 +63,15 @@ fetch('http://localhost:3000/api/teddies/' + id)
         detailText1.setAttribute('class', 'price' )
         detailText2.setAttribute('class', 'description')
 
-
-
         cols2.setAttribute('class', 'columns');
         col3.setAttribute('class', 'column');
         col3.setAttribute('id', 'wishlist-container')
 
-        pBtn.setAttribute('class', 'button');
-        pBtnA.setAttribute('href', 'cart.html')
-        pBtnSpan.setAttribute('class', 'icon is-small');
-        pBtnSpanI.setAttribute('class', 'fas fa-heart');
+        pBtn.setAttribute('class', 'btn btn-primary');
 
         col4.setAttribute('class', 'column');
         col4.setAttribute('id', 'buy-container')
         buyBtn.setAttribute('class', 'btn btn-primary');
-        buyBtnSpan.setAttribute('class', 'icon is-small');
-        buyBtnSpanI.setAttribute('class', 'fas fa-shopping-bag')
 
         select.setAttribute('id', 'color-select')
 
@@ -122,13 +111,9 @@ fetch('http://localhost:3000/api/teddies/' + id)
         col3.appendChild(pBtn);
 
         pBtn.appendChild(pBtnA);
-        pBtnA.appendChild(pBtnSpan)
-        pBtnSpan.appendChild(pBtnSpanI);
 
         cols2.appendChild(col4);
         col4.appendChild(buyBtn);
-        buyBtn.appendChild(buyBtnSpan);
-        buyBtnSpan.appendChild(buyBtnSpanI);
 
         console.log(teddy);
         })
