@@ -17,24 +17,20 @@ fetch('http://localhost:3000/api/teddies/' + id)
         const teddy = document.getElementById('teddy');
 
         const cols1 = document.createElement('div');
-        const col1 = document.createElement('div');
+        const row1 = document.createElement('div');
 
-        const ctnImage = document.createElement('div');
+        const imageRow = document.createElement('div')
         const teddyImage = document.createElement('img');
 
         const col2 = document.createElement('div');
-        const details = document.createElement('div');
         const detailTitle = document.createElement('h1');
         const detailText1 = document.createElement('p');
         const detailText2 = document.createElement('p');
 
         const cols2 = document.createElement('div');
-        const col3 = document.createElement('div');
 
         const pBtn = document.createElement('button');
-        const pBtnA = document.createElement('a')
 
-        const col4 = document.createElement('div');
         const buyBtn = document.createElement('button');
 
         const select = document.createElement('select')
@@ -51,27 +47,22 @@ fetch('http://localhost:3000/api/teddies/' + id)
         
         //classes
         
-        cols1.setAttribute('class', 'columns' );
-        col1.setAttribute('class', 'column');
+        cols1.setAttribute('class', 'container' );
+        row1.setAttribute('class', 'row');
 
-        ctnImage.setAttribute('id', 'ctnImage')
+        imageRow.setAttribute('class', 'col-3')
         teddyImage.setAttribute('class', 'img-thumbnail');
 
-        col2.setAttribute('class', 'column');
-        details.setAttribute('class', 'details');
+        col2.setAttribute('class', 'col-9');
         detailTitle.setAttribute('class', 'title')
         detailText1.setAttribute('class', 'price' )
         detailText2.setAttribute('class', 'description')
 
-        cols2.setAttribute('class', 'columns');
-        col3.setAttribute('class', 'column');
-        col3.setAttribute('id', 'wishlist-container')
+        cols2.setAttribute('class', 'col m-1');
 
-        pBtn.setAttribute('class', 'btn btn-primary');
+        pBtn.setAttribute('class', 'btn btn-primary m-1 text-white');
 
-        col4.setAttribute('class', 'column');
-        col4.setAttribute('id', 'buy-container')
-        buyBtn.setAttribute('class', 'btn btn-primary');
+        buyBtn.setAttribute('class', 'btn btn-primary m-1 text-white');
 
         select.setAttribute('id', 'color-select')
 
@@ -87,18 +78,18 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         teddy.appendChild(cols1);
 
-        cols1.appendChild(col1);
-        cols1.appendChild(col2);
+        cols1.appendChild(row1)
 
-        col1.appendChild(ctnImage);
-        ctnImage.appendChild(teddyImage);
+        row1.appendChild(imageRow);
+        row1.appendChild(col2);
 
-        col2.appendChild(details);
-        details.appendChild(detailTitle);
-        details.appendChild(detailText1);
-        details.appendChild(detailText2);
-        details.appendChild(select)
-        details.appendChild(cols2);
+        imageRow.appendChild(teddyImage);
+
+        col2.appendChild(detailTitle);
+        col2.appendChild(detailText1);
+        col2.appendChild(detailText2);
+        col2.appendChild(select)
+        col2.appendChild(cols2);
 
         select.appendChild(selectOption1)
         teddies.colors.forEach((element, index) => {
@@ -107,13 +98,9 @@ fetch('http://localhost:3000/api/teddies/' + id)
             select.appendChild(selectOption2);
         })
 
-        cols2.appendChild(col3);
-        col3.appendChild(pBtn);
+        cols2.appendChild(pBtn);
 
-        pBtn.appendChild(pBtnA);
-
-        cols2.appendChild(col4);
-        col4.appendChild(buyBtn);
+        cols2.appendChild(buyBtn);
 
         console.log(teddy);
         })
