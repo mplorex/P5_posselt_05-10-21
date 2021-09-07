@@ -48,12 +48,12 @@ fetch('http://localhost:3000/api/teddies/' + id)
         //classes
         
         cols1.setAttribute('class', 'container' );
-        row1.setAttribute('class', 'row');
+        row1.setAttribute('class', 'row m-4');
 
-        imageRow.setAttribute('class', 'col-3')
-        teddyImage.setAttribute('class', 'img-thumbnail');
+        imageRow.setAttribute('class', 'col-6')
+        teddyImage.setAttribute('class', 'img-fluid img-thumbnail')
 
-        col2.setAttribute('class', 'col-9');
+        col2.setAttribute('class', 'col-6');
         detailTitle.setAttribute('class', 'title')
         detailText1.setAttribute('class', 'price' )
         detailText2.setAttribute('class', 'description')
