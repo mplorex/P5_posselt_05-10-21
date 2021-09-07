@@ -23,7 +23,7 @@ fetch('http://localhost:3000/api/teddies')
             col.setAttribute('class', 'col col-12 col-sm-4 mb-4');
             card.setAttribute('class', 'card');
             card.setAttribute('id', 'card')
-            cardImg.setAttribute('class', 'card-img-top');
+            cardImg.setAttribute('class', 'card-img-top img-thumbnail');
             cardBody.setAttribute('class', 'card-body');
             cardTitle.setAttribute('class', 'card-title');
             cardText.setAttribute('class', 'card-text');
