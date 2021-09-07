@@ -48,7 +48,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
         //classes
         
         cols1.setAttribute('class', 'container' );
-        row1.setAttribute('class', 'row m-4');
+        row1.setAttribute('class', 'row m-5');
 
         imageRow.setAttribute('class', 'col-6')
         teddyImage.setAttribute('class', 'img-fluid img-thumbnail')
