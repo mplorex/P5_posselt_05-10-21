@@ -29,20 +29,21 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         const cols2 = document.createElement('div');
 
-        const pBtn = document.createElement('button');
+        const checkoutButton = document.createElement('button');
+        const checkoutButtonA = document.createElement('a')
 
-        const buyBtn = document.createElement('button');
+        const addToCartButton = document.createElement('button');
 
         const select = document.createElement('select')
         const selectOption1 = document.createElement('option')
 
-        buyBtn.addEventListener('click', ()=>{
+        addToCartButton.addEventListener('click', ()=>{
             addToCart(teddies, select.value);
         })
 
         //text
-        pBtn.innerHTML = 'CHECKOUT'
-        buyBtn.innerHTML = 'ADD TO CART'
+        checkoutButton.innerHTML = 'CHECKOUT'
+        addToCartButton.innerHTML = 'ADD TO CART'
         selectOption1.innerHTML = '--Select a color--'
         
         //classes
@@ -60,9 +61,10 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         cols2.setAttribute('class', 'col m-1');
 
-        pBtn.setAttribute('class', 'btn btn-primary m-1 text-white');
+        checkoutButton.setAttribute('class', 'btn btn-primary m-1 text-white');
+        checkoutButtonA.setAttribute('href', 'cart.html');
 
-        buyBtn.setAttribute('class', 'btn btn-primary m-1 text-white');
+        addToCartButton.setAttribute('class', 'btn btn-primary m-1 text-white');
 
         select.setAttribute('id', 'color-select')
 
@@ -98,9 +100,10 @@ fetch('http://localhost:3000/api/teddies/' + id)
             select.appendChild(selectOption2);
         })
 
-        cols2.appendChild(pBtn);
+        cols2.appendChild(checkoutButtonA);
+        checkoutButtonA.appendChild(checkoutButton);
 
-        cols2.appendChild(buyBtn);
+        cols2.appendChild(addToCartButton);
 
         console.log(teddy);
         })

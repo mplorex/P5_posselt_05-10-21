@@ -29,6 +29,7 @@ const formLabelCity = document.createElement('label');
 const formInputCity = document.createElement('input');
 const formFeedbackCity = document.createElement('div');
 const formColBtn = document.createElement('div');
+const formColBtnA = document.createElement('a');
 const formColBtnPrimary = document.createElement('button');
 const formTotal = document.createElement('div');
 
@@ -105,6 +106,7 @@ formInputCity.setAttribute('class', 'form-control');
 formInputCity.setAttribute('id', 'validationCustom05');
 formFeedbackCity.setAttribute('class', 'valid-feedback');
 formColBtn.setAttribute('class', 'col-12');
+formColBtnA.setAttribute('href', 'checkout-order.html')
 formColBtnPrimary.setAttribute('class', 'btn btn-primary');
 
 formMain.appendChild(formContainer);
@@ -136,7 +138,8 @@ formColCity.appendChild(formFeedbackCity);
 
 formCheckout.appendChild(formTotal)
 
-formCheckout.appendChild(formColBtn);
+formCheckout.appendChild(formColBtnA);
+formColBtnA.appendChild(formColBtn);
 formColBtn.appendChild(formColBtnPrimary);
 
 
