@@ -4,7 +4,6 @@ const ctn = document.createElement('div')
 
 
 const logoImg = document.createElement('img')
-const logoA = document.createElement('a')
 const btn = document.createElement('button')
 const span = document.createElement('span')
 
@@ -22,7 +21,6 @@ navItem2A.innerHTML = 'Cart'
 
 ctn.setAttribute('class', 'container-fluid')
 
-logoA.setAttribute('class', 'navbar-brand')
 btn.setAttribute('class', 'navbar-toggler')
 btn.setAttribute('type', 'button')
 btn.setAttribute('data-toggle', 'collapse')
@@ -48,8 +46,7 @@ logoImg.src = './images/logo.png'
 
 nav.appendChild(ctn)
 ctn.appendChild(logoImg)
-ctn.appendChild(logoA)
-logoA.appendChild(btn)
+ctn.appendChild(btn)
 btn.appendChild(span)
 ctn.appendChild(navbar)
 navbar.appendChild(navItems)

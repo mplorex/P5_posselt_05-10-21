@@ -1,37 +1,49 @@
-const checkoutBtns = document.getElementById('checkout-btns')
+const checkoutBtns = document.getElementById('checkout-btns');
 
-const checkoutBtn = document.createElement('button')
-const addToCartBtn = document.createElement('button')
-const cartRowTotal = document.createElement('div')
+const checkoutBtn = document.createElement('button');
+const checkoutBtnA = document.createElement('a')
+const emptyCartBtn = document.createElement('button');
+const cartRowTotal = document.createElement('div');
 
-checkoutBtn.setAttribute('href', 'checkout-form.html')
-checkoutBtn.setAttribute('class', 'btn-primary m-2')
-addToCartBtn.setAttribute('class', 'btn-primary m-2')
-cartRowTotal.setAttribute('id', 'cartTotal')
 
-const priceTotal = document.getElementById('cartTotal')
+checkoutBtn.setAttribute('class', 'btn btn-primary m-2 text-white');
+checkoutBtn.setAttribute('id', 'checkout')
+checkoutBtnA.setAttribute('href', 'checkout-form.html')
+emptyCartBtn.setAttribute('class', 'btn btn-primary m-2 text-white');
+cartRowTotal.setAttribute('id', 'cartTotal');
 
-addToCartBtn.addEventListener('click', emptyCart);
+const priceTotal = document.getElementById('cartTotal');
 
-checkoutBtn.innerHTML = 'Checkout' 
-addToCartBtn.innerHTML = 'Empty cart'
+emptyCartBtn.addEventListener('click', emptyCart);
+
+checkoutBtn.innerHTML = 'Checkout'; 
+emptyCartBtn.innerHTML = 'Empty cart';
 cartRowTotal.innerHTML = '<b>Total: </b>' + cartTotal();
 
-checkoutBtns.appendChild(checkoutBtn)
-checkoutBtns.appendChild(addToCartBtn)
-checkoutBtns.appendChild(cartRowTotal)
+checkoutBtn.addEventListener('click', ()=>{
+    checkoutLink();
+})
 
+checkoutBtns.appendChild(checkoutBtnA);
+checkoutBtnA.appendChild(checkoutBtn);
+checkoutBtns.appendChild(emptyCartBtn);
+checkoutBtns.appendChild(cartRowTotal);
 
 function emptyCart() {
-    if(sessionStorage.getItem('cartData'))
+    if(sessionStorage.getItem('cartData'));
     cartData = JSON.parse(localStorage.getItem('cartData'));
     {
         sessionStorage.removeItem('cartData');
         cartData = [];
-        localStorage.setItem('cartData', JSON.stringify())
+        localStorage.setItem('cartData', JSON.stringify());
     }
-    localStorage.setItem('cartData', JSON.stringify(cartData))
+    localStorage.setItem('cartData', JSON.stringify(cartData));
     window.location.reload();
 }
 
-console.log(checkoutBtns)
+function checkoutLink() {
+    let btnClick = document.getElementById('checkout')
+    btnClick.href = 'cart.html';
+}
+
+console.log(checkoutBtns);
