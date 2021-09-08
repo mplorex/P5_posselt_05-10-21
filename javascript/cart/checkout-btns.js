@@ -16,7 +16,7 @@ const priceTotal = document.getElementById('cartTotal');
 
 emptyCartBtn.addEventListener('click', emptyCart);
 
-checkoutBtn.innerHTML = 'Checkout'; 
+checkoutBtn.innerHTML = 'Complete order'; 
 emptyCartBtn.innerHTML = 'Empty cart';
 cartRowTotal.innerHTML = '<b>Total: </b>' + cartTotal();
 

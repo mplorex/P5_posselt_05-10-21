@@ -44,7 +44,7 @@ formLabelAddress.innerHTML = 'Address';
 formFeedbackAddress.innerHTML = 'looks great!';
 formLabelCity.innerHTML = 'City';
 formFeedbackCity.innerHTML = 'looks great!';
-formColBtnPrimary.innerHTML = 'Submit form';
+formColBtnPrimary.innerHTML = 'Submit order';
 formTotal.innerHTML = '<b>Total: </b>' + cartTotal();
 
 
