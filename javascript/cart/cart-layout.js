@@ -40,7 +40,7 @@ teddyData.forEach((teddy) => {
     const cartBodyRowQuantity = document.createElement('td');
     const cartBodyRowTotal = document.createElement('td');
 
-    cartTable.setAttribute('class', 'table')
+    cartTable.setAttribute('class', 'table container')
     cartRowTitle.setAttribute('scope', 'col')
     cartRowColor.setAttribute('scope', 'col')
     cartRowPrice.setAttribute('scope', 'col')
