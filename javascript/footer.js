@@ -20,7 +20,7 @@ ftrLink1.innerHTML = 'Facebook'
 ftrLink2.innerHTML = 'Instagram'
 ftrLink3.innerHTML = 'Twitter'
 
-ctnFooter.setAttribute('class', 'col bckg text-white')
+ctnFooter.setAttribute('class', 'col bckg text-white container-xxlg')
 ftrLink1.setAttribute('href', 'https://facebook.com')
 ftrLink1.setAttribute('class', 'text-white')
 ftrLink1.setAttribute('style', 'text-decoration:none')
