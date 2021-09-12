@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "node-sass -w scss/styles.scss css/styles.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bootstrap": "^5.0.2"
+    "bootstrap": "^5.0.2",
+    "node-sass": "^6.0.1"
   },
   "dependencies": {},
   "description": ""

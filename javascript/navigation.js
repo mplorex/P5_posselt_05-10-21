@@ -19,7 +19,7 @@ navItem2A.innerHTML = 'Cart'
 
 //classes
 
-ctn.setAttribute('class', 'container-fluid')
+ctn.setAttribute('class', 'container')
 
 btn.setAttribute('class', 'navbar-toggler')
 btn.setAttribute('type', 'button')
