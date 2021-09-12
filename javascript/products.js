@@ -18,9 +18,9 @@ fetch('http://localhost:3000/api/teddies')
     
             cardBtn.innerHTML = "Buy Now!";
     
-            ctn.setAttribute('class', 'container')
+            ctn.setAttribute('class', 'row')
             ctn.setAttribute('id', 'container')
-            col.setAttribute('class', 'col col-12 col-sm-4 mb-4');
+            col.setAttribute('class', 'col col-12 col-sm-4 p-3');
             card.setAttribute('class', 'card');
             card.setAttribute('id', 'card')
             cardImg.setAttribute('class', 'card-img-top img-thumbnail');
@@ -28,7 +28,7 @@ fetch('http://localhost:3000/api/teddies')
             cardTitle.setAttribute('class', 'card-title');
             cardText.setAttribute('class', 'card-text');
             cardPrice.setAttribute('class', 'card-price');
-            cardBtn.setAttribute('class', 'btn btn-tertiary btn-large text-white stretched-link');
+            cardBtn.setAttribute('class', 'btn btn-secondary btn-large text-white stretched-link');
 
 
             cardBtn.setAttribute('href', './teddy.html?id=' + teddies[i]._id)
