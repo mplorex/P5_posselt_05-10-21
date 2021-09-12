@@ -28,7 +28,7 @@ fetch('http://localhost:3000/api/teddies')
             cardTitle.setAttribute('class', 'card-title');
             cardText.setAttribute('class', 'card-text');
             cardPrice.setAttribute('class', 'card-price');
-            cardBtn.setAttribute('class', 'btn btn-secondary btn-large text-white stretched-link');
+            cardBtn.setAttribute('class', 'btn btn-tertiary btn-large text-white stretched-link');
 
 
             cardBtn.setAttribute('href', './teddy.html?id=' + teddies[i]._id)

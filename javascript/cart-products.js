@@ -14,10 +14,7 @@ productPrice.innerHTML = 'PRICE';
 productQuantity.innerHTML = 'QUANTITY';
 productTotal.innerHTML = 'TOTAL';
 
-productCtn.setAttribute('class', 'product-container');
-productHdr.setAttribute('class', 'product-header');
-productTitle.setAttribute('class', 'product-title');
-productPrice.setAttribute('class', 'price');
+productCtn.setAttribute('class', 'container');
 productQuantity.setAttribute('class', 'quantity');
 productTotal.setAttribute('class', 'total');
 products.setAttribute('class', 'products');

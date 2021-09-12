@@ -12,12 +12,8 @@ $cyan:    #0dcaf0;
 
 // scss-docs-start theme-color-variables
 $primary:     #9167f8;
-$secondary:     $gray-600;
+$secondary:     #b84cb1;
 $tertiary:       #b22ecc;
-$info:          $cyan;
-$warning:       $yellow;
-$danger:        $red;
-$dark:          $gray-900;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -25,12 +21,6 @@ $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
   "tertiary":   $tertiary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
 ) !default;
 
 $spacer: 1rem !default;
