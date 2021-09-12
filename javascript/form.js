@@ -45,7 +45,7 @@ formFeedbackAddress.innerHTML = 'looks great!';
 formLabelCity.innerHTML = 'City';
 formFeedbackCity.innerHTML = 'looks great!';
 formColBtnPrimary.innerHTML = 'Submit order';
-formTotal.innerHTML = '<b>Total: </b>' + cartTotal();
+formTotal.innerHTML = '<b>Total: </b>' + new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(cartTotal());
 
 
 

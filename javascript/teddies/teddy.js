@@ -74,7 +74,7 @@ fetch('http://localhost:3000/api/teddies/' + id)
         teddyImage.src = teddies.imageUrl;
         detailTitle.textContent = teddies.name;
         detailText1.textContent = teddies.description;
-        detailText2.textContent = teddies.price;
+        detailText2.textContent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(teddies.price);
 
         // order
 

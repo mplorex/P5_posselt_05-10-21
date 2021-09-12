@@ -36,7 +36,7 @@ fetch('http://localhost:3000/api/teddies')
             cardImg.src = teddies[i].imageUrl ;
             cardTitle.textContent = teddies[i].name;
             cardText.textContent = teddies [i].description;
-            cardPrice.textContent = teddies [i].price;
+            cardPrice.textContent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(teddies[i].price);
 
     
             ctn.appendChild(col)

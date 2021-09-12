@@ -18,7 +18,7 @@ emptyCartBtn.addEventListener('click', emptyCart);
 
 checkoutBtn.innerHTML = 'Complete order'; 
 emptyCartBtn.innerHTML = 'Empty cart';
-cartRowTotal.innerHTML = '<b>Total: </b>' + cartTotal();
+cartRowTotal.innerHTML = '<b>Total: </b>' + new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(cartTotal());
 
 checkoutBtn.addEventListener('click', ()=>{
     checkoutLink();
