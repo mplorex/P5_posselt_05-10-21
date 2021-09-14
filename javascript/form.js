@@ -144,7 +144,7 @@ formColBtn.appendChild(formColBtnPrimary);
 
 
 const form = document.getElementById('checkout')
-
+let userInfo = [];
 form.addEventListener('submit', function (event) {
 	event.preventDefault()
 	if (!form.checkValidity()) {
@@ -163,8 +163,10 @@ form.addEventListener('submit', function (event) {
         city: formData.get('city')
     
 	}
-	
+	localStorage.setItem('userInfo', JSON.stringify(info));
 	console.log(info)
+	location.href='order-confirmation.html';
+	form.classList.add('was-validated')
 
 	form.classList.add('was-validated')
 }, false)
