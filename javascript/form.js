@@ -167,8 +167,6 @@ form.addEventListener('submit', function (event) {
 	console.log(info)
 	location.href='order-confirmation.html';
 	form.classList.add('was-validated')
-
-	form.classList.add('was-validated')
 }, false)
 
 function addInfo (data) {

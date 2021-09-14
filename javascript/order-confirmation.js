@@ -1,7 +1,72 @@
 const teddyData = JSON.parse(localStorage.getItem('cartData'));
+const userInfo = JSON.parse(localStorage.getItem('userInfo'))
 console.log(teddyData);
+console.log(userInfo)
 
 if(teddyData.length!=0){
+    const userData = document.getElementById('user-info')
+
+    const userInfoTitle = document.createElement('h2');
+    userInfoTitle.innerHTML = 'Thank you for your purchase!';
+    userData.append(userInfoTitle);
+
+    const userBody = document.createElement('table');
+
+    userData.append(userBody);
+    userBody.setAttribute('class', 'customerinfo mgnscss');
+    userInfoTitle.setAttribute('class', 'mgnscss');
+
+    const userNameRow = document.createElement('tr');
+    const firstNameLabel = document.createElement('td');
+    const firstNameValue = document.createElement('td');
+    firstNameLabel.innerHTML = 'First name';
+    firstNameValue.innerHTML = userInfo.firstName;
+
+    userBody.append(userNameRow);
+    userNameRow.append(firstNameLabel);
+    userNameRow.append(firstNameValue);
+
+    const lastNameRow = document.createElement('tr');
+    const lastNameLabel = document.createElement('td');
+    const lastNameValue = document.createElement('td');
+    lastNameLabel.innerHTML = 'Last name';
+    lastNameValue.innerHTML = userInfo.lastName;
+
+    userBody.append(lastNameRow);
+    lastNameRow.append(lastNameLabel);
+    lastNameRow.append(lastNameValue);
+
+    const emailRow = document.createElement('tr');
+    const emailLabel = document.createElement('td');
+    const emailValue = document.createElement('td');
+    emailLabel.innerHTML = 'Email';
+    emailValue.innerHTML = userInfo.email;
+
+    userBody.append(emailRow);
+    emailRow.append(emailLabel);
+    emailRow.append(emailValue);
+
+    const addressRow = document.createElement('tr');
+    const addressLabel = document.createElement('td');
+    const addressValue = document.createElement('td');
+    addressLabel.innerHTML = 'Address';
+    addressValue.innerHTML = userInfo.address;
+
+    userBody.append(addressRow);
+    addressRow.append(addressLabel);
+    addressRow.append(addressValue);
+
+    const cityRow = document.createElement('tr');
+    const cityLabel = document.createElement('td');
+    const cityValue = document.createElement('td');
+    cityLabel.innerHTML = 'City';
+    cityValue.innerHTML = userInfo.city;
+
+    userBody.append(cityRow);
+    cityRow.append(cityLabel);
+    cityRow.append(cityValue);
+    
+
     const cartData = document.getElementById('cart-data');
 
     const orderDetails = document.createElement('h2');
