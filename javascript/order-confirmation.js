@@ -6,72 +6,75 @@ console.log(userInfo)
 if(teddyData.length!=0){
     const userData = document.getElementById('user-info')
 
+    userData.setAttribute('class', 'container')
+
     const userInfoTitle = document.createElement('h2');
     userInfoTitle.innerHTML = 'Thank you for your purchase!';
     userData.append(userInfoTitle);
 
     const userBody = document.createElement('table');
+    const userBodyHead = document.createElement('thead')
 
     userData.append(userBody);
-    userBody.setAttribute('class', 'customerinfo mgnscss');
-    userInfoTitle.setAttribute('class', 'mgnscss');
+    userBody.append(userBodyHead);
 
     const userNameRow = document.createElement('tr');
-    const firstNameLabel = document.createElement('td');
-    const firstNameValue = document.createElement('td');
-    firstNameLabel.innerHTML = 'First name';
+    const firstNameLabel = document.createElement('th');
+    const firstNameValue = document.createElement('th');
+    firstNameLabel.innerHTML = 'First name:  ';
     firstNameValue.innerHTML = userInfo.firstName;
 
-    userBody.append(userNameRow);
+    userBodyHead.append(userNameRow);
     userNameRow.append(firstNameLabel);
     userNameRow.append(firstNameValue);
 
     const lastNameRow = document.createElement('tr');
-    const lastNameLabel = document.createElement('td');
-    const lastNameValue = document.createElement('td');
-    lastNameLabel.innerHTML = 'Last name';
+    const lastNameLabel = document.createElement('th');
+    const lastNameValue = document.createElement('th');
+    lastNameLabel.innerHTML = 'Last name:  ';
     lastNameValue.innerHTML = userInfo.lastName;
 
-    userBody.append(lastNameRow);
+    userBodyHead.append(lastNameRow);
     lastNameRow.append(lastNameLabel);
     lastNameRow.append(lastNameValue);
 
     const emailRow = document.createElement('tr');
-    const emailLabel = document.createElement('td');
-    const emailValue = document.createElement('td');
-    emailLabel.innerHTML = 'Email';
+    const emailLabel = document.createElement('th');
+    const emailValue = document.createElement('th');
+    emailLabel.innerHTML = 'Email:  ';
     emailValue.innerHTML = userInfo.email;
 
-    userBody.append(emailRow);
+    userBodyHead.append(emailRow);
     emailRow.append(emailLabel);
     emailRow.append(emailValue);
 
     const addressRow = document.createElement('tr');
-    const addressLabel = document.createElement('td');
-    const addressValue = document.createElement('td');
-    addressLabel.innerHTML = 'Address';
+    const addressLabel = document.createElement('th');
+    const addressValue = document.createElement('th');
+    addressLabel.innerHTML = 'Address:  ';
     addressValue.innerHTML = userInfo.address;
 
-    userBody.append(addressRow);
+    userBodyHead.append(addressRow);
     addressRow.append(addressLabel);
     addressRow.append(addressValue);
 
     const cityRow = document.createElement('tr');
-    const cityLabel = document.createElement('td');
-    const cityValue = document.createElement('td');
-    cityLabel.innerHTML = 'City';
+    const cityLabel = document.createElement('th');
+    const cityValue = document.createElement('th');
+    cityLabel.innerHTML = 'City:  ';
     cityValue.innerHTML = userInfo.city;
 
-    userBody.append(cityRow);
+    userBodyHead.append(cityRow);
     cityRow.append(cityLabel);
     cityRow.append(cityValue);
     
 
     const cartData = document.getElementById('cart-data');
 
+    cartData.setAttribute('class', 'container')
+
     const orderDetails = document.createElement('h2');
-    orderDetails.innerHTML="Your purchase info";
-    orderDetails.setAttribute('class', 'mgnscss')
+    orderDetails.innerHTML="Your purchase details";
     cartData.appendChild(orderDetails);
     
     const cartTable = document.createElement('table');
@@ -131,8 +134,8 @@ if(teddyData.length!=0){
     });
     
     const cartOrderTotal= document.getElementById('cart-total');
+    cartOrderTotal.setAttribute('class', 'container')
     const totalrow = document.createElement('label');
-    totalrow.setAttribute('class', 'mgnscsstotal')
     totalrow.innerHTML = "<b>Total: </b>"+ new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(cartTotal());
     cartOrderTotal.append(totalrow);
 }
