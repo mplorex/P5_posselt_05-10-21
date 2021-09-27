@@ -3,6 +3,8 @@ const userInfo = JSON.parse(localStorage.getItem('userInfo'))
 console.log(teddyData);
 console.log(userInfo)
 
+
+
 if(teddyData.length!=0){
     const userData = document.getElementById('user-info')
 

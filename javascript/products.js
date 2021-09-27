@@ -20,7 +20,7 @@ fetch('http://localhost:3000/api/teddies')
     
             ctn.setAttribute('class', 'row')
             ctn.setAttribute('id', 'container')
-            col.setAttribute('class', 'col col-12 col-sm-4 p-3');
+            col.setAttribute('class', 'col col-12 col-md-4 p-3');
             card.setAttribute('class', 'card');
             card.setAttribute('id', 'card')
             cardImg.setAttribute('class', 'card-img-top img-thumbnail');
@@ -28,7 +28,7 @@ fetch('http://localhost:3000/api/teddies')
             cardTitle.setAttribute('class', 'card-title');
             cardText.setAttribute('class', 'card-text');
             cardPrice.setAttribute('class', 'card-price');
-            cardBtn.setAttribute('class', 'btn btn-secondary btn-large text-white stretched-link');
+            cardBtn.setAttribute('class', 'btn btn-tertiary btn-large text-white stretched-link');
 
 
             cardBtn.setAttribute('href', './teddy.html?id=' + teddies[i]._id)
@@ -36,7 +36,7 @@ fetch('http://localhost:3000/api/teddies')
             cardImg.src = teddies[i].imageUrl ;
             cardTitle.textContent = teddies[i].name;
             cardText.textContent = teddies [i].description;
-            cardPrice.textContent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(teddies[i].price);
+            cardPrice.textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(teddies[i].price);
 
     
             ctn.appendChild(col)
@@ -48,6 +48,7 @@ fetch('http://localhost:3000/api/teddies')
             cardBody.appendChild(cardPrice);
             cardBody.appendChild(cardBtn);
             teddyList.appendChild(col);
+    
         }
     })
     .catch (error => console.error(error));

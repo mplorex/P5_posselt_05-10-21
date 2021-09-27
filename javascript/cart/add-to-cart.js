@@ -6,7 +6,6 @@ if (localStorage.getItem("cartData")){
 
 function addToCart (product, color) {
     if(color != '--Select a color--'){
-
         let productExists = false
         console.log(color)
         for (let i = 0; i < cartData.length; i++) {
