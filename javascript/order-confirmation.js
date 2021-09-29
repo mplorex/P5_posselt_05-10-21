@@ -1,5 +1,5 @@
 const teddyData = JSON.parse(localStorage.getItem('cartData'));
-const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 console.log(teddyData);
 console.log(userInfo)
 
@@ -9,6 +9,11 @@ if(teddyData.length!=0){
     const userData = document.getElementById('user-info')
 
     userData.setAttribute('class', 'container')
+
+    const userOrderId = document.createElement('h2')
+    userOrderId.setAttribute('id', 'order-id')
+    userOrderId.innerHTML = 'order Id:' + orderUUID();
+    userData.append(userOrderId);
 
     const userInfoTitle = document.createElement('h2');
     userInfoTitle.innerHTML = 'Thank you for your purchase!';
@@ -140,6 +145,15 @@ if(teddyData.length!=0){
     const totalrow = document.createElement('label');
     totalrow.innerHTML = "<b>Total: </b>"+ new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(cartTotal());
     cartOrderTotal.append(totalrow);
+}
+
+function orderUUID() {
+    function randomNumber() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return randomNumber() + randomNumber() + ' - ' + randomNumber() + ' - ' + randomNumber() + randomNumber() + randomNumber();
 }
 function cartTotal(){
     let cartTotal = 0;

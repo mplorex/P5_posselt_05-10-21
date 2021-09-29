@@ -1,14 +1,11 @@
+fetch('http://localhost:3000/api/teddies');
+
 const express = require('express')
 const uuid = require('uuid');
+const app = express();
 
-//body parse
-app.use(express.json());
-app.use(express.urlencoded({ extended: false}));
-
-//route get
-router.get('/:_id')
-app.get('/', function(req, res){
-    res.send('Hello world')
+app.get('teddies', (req, res) => {
+    res.json(teddies);
 })
 
 //route post
@@ -22,7 +19,3 @@ router.post('/order', (req, res) => {
 
 //api route
 app.use('', require('./routes/'));
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log('Server started on port ${PORT}'));
