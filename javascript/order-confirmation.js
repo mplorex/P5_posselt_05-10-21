@@ -147,14 +147,6 @@ if(teddyData.length!=0){
     cartOrderTotal.append(totalrow);
 }
 
-function orderUUID() {
-    function randomNumber() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    }
-    return randomNumber() + randomNumber() + ' - ' + randomNumber() + ' - ' + randomNumber() + randomNumber() + randomNumber();
-}
 function cartTotal(){
     let cartTotal = 0;
     for(let i in teddyData) {
@@ -172,3 +164,49 @@ function emptycart()
 
     
 }
+
+//
+
+//import cart data
+const cart = [
+	{
+		_id: '12345'
+	},
+	{
+		_id: '12345'
+	}
+]
+
+let products = []
+for (let i = 0; i < cart.length; i++ ){
+	products.push(cart[i]._id, cart[i].name, cart[i].colors, cart[i].price, cart[i].quantity)
+}
+const info = {
+	contact: {
+		firstName:          form.get('firstName'),
+    lastName: 
+    form.get('lastName'),
+    email: 
+    form.get('address'),
+    address: 
+    form.get('address'),
+    city:
+    form.get('city')
+	},
+	products: products
+}
+
+// Default options are marked with *
+fetch('http://localhost:3000/order', {
+	method: 'POST', // *GET, POST, PUT, DELETE, etc.
+	headers: {
+		'Content-Type': 'application/json'
+	},
+	body: JSON.stringify(info) 
+})
+	.then(response => response.json())
+	.then(data => {
+		cartBody =  JSON.parse(localStorage.setItem('cartData'))
+		
+	})
+	.catch(error => console.error(error))

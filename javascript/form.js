@@ -164,6 +164,7 @@ form.addEventListener('submit', function (event) {
     
 	}
 	localStorage.setItem('userInfo', JSON.stringify(info));
+	//send data to backend
 	console.log(info)
 	location.href='order-confirmation.html';
 	form.classList.add('was-validated')
