@@ -10,11 +10,6 @@ if(teddyData.length!=0){
 
     userData.setAttribute('class', 'container')
 
-    const userOrderId = document.createElement('h2')
-    userOrderId.setAttribute('id', 'order-id')
-    userOrderId.innerHTML = 'order Id:' + orderUUID();
-    userData.append(userOrderId);
-
     const userInfoTitle = document.createElement('h2');
     userInfoTitle.innerHTML = 'Thank you for your purchase!';
     userData.append(userInfoTitle);
@@ -179,26 +174,27 @@ const cart = [
 
 let products = []
 for (let i = 0; i < cart.length; i++ ){
-	products.push(cart[i]._id, cart[i].name, cart[i].colors, cart[i].price, cart[i].quantity)
+	products.push(cart[i]._id)
 }
 const info = {
 	contact: {
-		firstName:          form.get('firstName'),
-    lastName: 
-    form.get('lastName'),
+		first:         
+    userInfo.firstName,
+    last: 
+    userInfo.lastName,
     email: 
-    form.get('address'),
+    userInfo.address,
     address: 
-    form.get('address'),
+    userInfo.address,
     city:
-    form.get('city')
+    userInfo.city
 	},
 	products: products
 }
 
 // Default options are marked with *
-fetch('http://localhost:3000/order', {
-	method: 'POST', // *GET, POST, PUT, DELETE, etc.
+fetch('http://localhost:3000/api/teddies/', {
+	method: 'POST', 
 	headers: {
 		'Content-Type': 'application/json'
 	},
