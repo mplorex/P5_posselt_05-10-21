@@ -1,11 +1,10 @@
-const nav = document.getElementById('nav')
+const navigation = document.getElementById('nav')
 
-const ctn = document.createElement('div')
-
+const navigationContainer = document.createElement('div')
 
 const logoImg = document.createElement('img')
-const btn = document.createElement('button')
-const span = document.createElement('span')
+const menuButton = document.createElement('button')
+const buttonSpan = document.createElement('span')
 
 const navbar = document.createElement('div')
 const navItems = document.createElement('ul')
@@ -19,16 +18,16 @@ navItem2A.innerHTML = 'Cart'
 
 //classes
 
-ctn.setAttribute('class', 'container')
+navigationContainer.setAttribute('class', 'container')
 
-btn.setAttribute('class', 'navbar-toggler')
-btn.setAttribute('type', 'button')
-btn.setAttribute('data-toggle', 'collapse')
-btn.setAttribute('data-target', '#navbarContent')
-btn.setAttribute('aria-controls', 'navbarCollapse')
-btn.setAttribute('aria-expanded', 'false')
-btn.setAttribute('aria-label', 'Toggle navigation')
-span.setAttribute('class', 'navbar-toggler-icon')
+menuButton.setAttribute('class', 'navbar-toggler')
+menuButton.setAttribute('type', 'button')
+menuButton.setAttribute('data-toggle', 'collapse')
+menuButton.setAttribute('data-target', '#navbarContent')
+menuButton.setAttribute('aria-controls', 'navbarCollapse')
+menuButton.setAttribute('aria-expanded', 'false')
+menuButton.setAttribute('aria-label', 'Toggle navigation')
+buttonSpan.setAttribute('class', 'navbar-toggler-icon')
 
 navbar.setAttribute('class', 'collapse navbar-collapse')
 navbar.setAttribute('id', 'navbarContent')
@@ -44,15 +43,15 @@ logoImg.src = './images/logo.png'
 
 //layering
 
-nav.appendChild(ctn)
-ctn.appendChild(logoImg)
-ctn.appendChild(btn)
-btn.appendChild(span)
-ctn.appendChild(navbar)
+navigation.appendChild(navigationContainer)
+navigationContainer.appendChild(logoImg)
+navigationContainer.appendChild(menuButton)
+menuButton.appendChild(buttonSpan)
+navigationContainer.appendChild(navbar)
 navbar.appendChild(navItems)
 navItems.appendChild(navItem1)
 navItem1.appendChild(navItem1A)
 navItems.appendChild(navItem2)
 navItem2.appendChild(navItem2A)
 
-console.log(nav);
+console.log(navigation);
