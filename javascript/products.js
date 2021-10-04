@@ -53,9 +53,9 @@ fetch('http://localhost:3000/api/teddies')
 })
 .catch (error => console.error(error));
 
-const colStyle = document.getElementById('teddies');
+const columnStyle = document.getElementById('teddies');
 
-colStyle.style.display = "flex";
-colStyle.style.justifyContent = "center";
+columnStyle.style.display = "flex";
+columnStyle.style.justifyContent = "center";
 
-console.log(colStyle)
+console.log(columnStyle)
