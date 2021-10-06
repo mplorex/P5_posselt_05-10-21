@@ -1,5 +1,9 @@
 const teddyData = JSON.parse(localStorage.getItem('cartData'));
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+const { 
+    v4: uuidv4
+} = require('uuid');
+
 console.log(teddyData);
 console.log(userInfo)
 
@@ -160,17 +164,21 @@ function emptycart()
     
 }
 
+uuidv4();
+
 //
 
 //import cart data
-const cart = [
+/* const cart = [
 	{
 		_id: '12345'
 	},
 	{
 		_id: '12345'
 	}
-]
+] */
+
+/*const cart = []
 
 let products = []
 for (let i = 0; i < cart.length; i++ ){
@@ -206,3 +214,4 @@ fetch('http://localhost:3000/api/teddies/', {
 		
 	})
 	.catch(error => console.error(error))
+*/
