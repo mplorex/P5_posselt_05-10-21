@@ -1,14 +1,15 @@
+import { v4 as uuidv4 } from 'uuid';
+
+const uuid = document.getElementById('uuid');
+
+const uuidPlaceholder = document.createElement('div');
+uuidPlaceholder.setAttribute('id', 'uuid');
+
+const cartData = localStorage.getItem("cartData")
+    JSON.parse(localStorage.getItem("cartData"));
 
 
-//import cart data
-const cart = [
-	{
-		_id: '12345'
-	},
-	{
-		_id: '12345'
-	}
-] 
+uuidv4();
 
 const cart = []
 
@@ -46,3 +47,5 @@ fetch('http://localhost:3000/api/teddies/', {
 		
 	})
 	.catch(error => console.error(error))
+
+    uuid.appendChild('uuidPlaceholder')

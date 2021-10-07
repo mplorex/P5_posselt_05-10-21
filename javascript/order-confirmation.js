@@ -1,8 +1,5 @@
 const teddyData = JSON.parse(localStorage.getItem('cartData'));
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-const { 
-    v4: uuidv4
-} = require('uuid');
 
 console.log(teddyData);
 console.log(userInfo)
@@ -164,7 +161,6 @@ function emptycart()
     
 }
 
-uuidv4();
 
 //
 
