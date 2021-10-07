@@ -16,94 +16,94 @@ fetch('http://localhost:3000/api/teddies/' + id)
 
         const teddy = document.getElementById('teddy');
 
-        const cols1 = document.createElement('div');
-        const row1 = document.createElement('div');
+        const teddyContainer = document.createElement('div');
+        const teddyRow = document.createElement('div');
 
-        const imageRow = document.createElement('div')
+        const imageColumn = document.createElement('div')
         const teddyImage = document.createElement('img');
 
-        const col2 = document.createElement('div');
-        const detailTitle = document.createElement('h1');
-        const detailText1 = document.createElement('p');
-        const detailText2 = document.createElement('p');
+        const textColumn = document.createElement('div');
+        const columnTitle = document.createElement('h1');
+        const columnText1 = document.createElement('p');
+        const columnText2 = document.createElement('p');
 
-        const cols2 = document.createElement('div');
+        const buttons = document.createElement('div');
 
         const checkoutButton = document.createElement('button');
         const checkoutButtonA = document.createElement('a')
 
         const addToCartButton = document.createElement('button');
 
-        const select = document.createElement('select')
-        const selectOption1 = document.createElement('option')
+        const colorSelect = document.createElement('select')
+        const colorSelectOption1 = document.createElement('option')
 
         addToCartButton.addEventListener('click', ()=>{
-            addToCart(teddies, select.value);
+            addToCart(teddies, colorSelect.value);
         })
 
         //text
         checkoutButton.innerHTML = 'CHECKOUT'
         addToCartButton.innerHTML = 'ADD TO CART'
-        selectOption1.innerHTML = '--Select a color--'
+        colorSelectOption1.innerHTML = '--Select a color--'
         
         //classes
         
-        cols1.setAttribute('class', 'container' );
-        row1.setAttribute('class', 'row m-5');
+        teddyContainer.setAttribute('class', 'container' );
+        teddyRow.setAttribute('class', 'row m-5');
 
-        imageRow.setAttribute('class', 'col-6')
+        imageColumn.setAttribute('class', 'col-6')
         teddyImage.setAttribute('class', 'img-fluid img-thumbnail')
 
-        col2.setAttribute('class', 'col-6');
-        detailTitle.setAttribute('class', 'title')
-        detailText1.setAttribute('class', 'price' )
-        detailText2.setAttribute('class', 'description')
+        textColumn.setAttribute('class', 'col-6');
+        columnTitle.setAttribute('class', 'title')
+        columnText1.setAttribute('class', 'price' )
+        columnText2.setAttribute('class', 'description')
 
-        cols2.setAttribute('class', 'col m-1');
+        buttons.setAttribute('class', 'col m-1');
 
         checkoutButton.setAttribute('class', 'btn btn-primary m-1 text-white');
         checkoutButtonA.setAttribute('href', 'cart.html');
 
         addToCartButton.setAttribute('class', 'btn btn-primary m-1 text-white');
 
-        select.setAttribute('id', 'color-select')
+        colorSelect.setAttribute('id', 'color-select')
 
 
         //teddy
 
         teddyImage.src = teddies.imageUrl;
-        detailTitle.textContent = teddies.name;
-        detailText1.textContent = teddies.description;
-        detailText2.textContent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(teddies.price);
+        columnTitle.textContent = teddies.name;
+        columnText1.textContent = teddies.description;
+        columnText2.textContent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(teddies.price);
 
         // order
 
-        teddy.appendChild(cols1);
+        teddy.appendChild(teddyContainer);
 
-        cols1.appendChild(row1)
+        teddyContainer.appendChild(teddyRow)
 
-        row1.appendChild(imageRow);
-        row1.appendChild(col2);
+        teddyRow.appendChild(imageColumn);
+        teddyRow.appendChild(textColumn);
 
-        imageRow.appendChild(teddyImage);
+        imageColumn.appendChild(teddyImage);
 
-        col2.appendChild(detailTitle);
-        col2.appendChild(detailText1);
-        col2.appendChild(detailText2);
-        col2.appendChild(select)
-        col2.appendChild(cols2);
+        textColumn.appendChild(columnTitle);
+        textColumn.appendChild(columnText1);
+        textColumn.appendChild(columnText2);
+        textColumn.appendChild(colorSelect)
+        textColumn.appendChild(buttons);
 
-        select.appendChild(selectOption1)
+        colorSelect.appendChild(colorSelectOption1)
         teddies.colors.forEach((element, index) => {
-            const selectOption2 = document.createElement('option')
-            selectOption2.textContent = element;
-            select.appendChild(selectOption2);
+            const colorSelectOption2 = document.createElement('option')
+            colorSelectOption2.textContent = element;
+            colorSelect.appendChild(colorSelectOption2);
         })
 
-        cols2.appendChild(checkoutButtonA);
+        buttons.appendChild(checkoutButtonA);
         checkoutButtonA.appendChild(checkoutButton);
 
-        cols2.appendChild(addToCartButton);
+        buttons.appendChild(addToCartButton);
 
         console.log(teddy);
         })
