@@ -6,11 +6,12 @@ const emptyCartButton = document.createElement('button');
 const cartPageTotal = document.createElement('div');
 
 
-checkoutButton.setAttribute('class', 'btn btn-primary m-2 text-white');
+checkoutButton.setAttribute('class', 'btn btn-primary mr-2 text-white');
 checkoutButton.setAttribute('id', 'checkout')
 checkoutButtonA.setAttribute('href', 'checkout-form.html')
 emptyCartButton.setAttribute('class', 'btn btn-primary m-2 text-white');
 cartPageTotal.setAttribute('id', 'cartTotal');
+cartPageTotal.setAttribute('class', 'm-2')
 
 const priceTotal = document.getElementById('cartTotal');
 
