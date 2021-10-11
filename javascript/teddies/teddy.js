@@ -67,6 +67,8 @@ fetch('http://localhost:3000/api/teddies/' + id)
         addToCartButton.setAttribute('class', 'btn btn-primary m-1 text-white');
 
         colorSelect.setAttribute('id', 'color-select')
+        colorSelect.setAttribute('class', 'form-select')
+        colorSelect.setAttribute('aria-label', 'Default select example')
 
 
         //teddy

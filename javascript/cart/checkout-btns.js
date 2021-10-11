@@ -27,7 +27,7 @@ checkoutButton.addEventListener('click', ()=>{
 cartButtons.appendChild(checkoutButtonA);
 checkoutButtonA.appendChild(checkoutButton);
 cartButtons.appendChild(emptyCartButton);
-cartButtons.appendChild(cartRowTotal);
+cartButtons.appendChild(cartPageTotal);
 
 function emptyCart() {
     if(sessionStorage.getItem('cartData'));

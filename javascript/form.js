@@ -4,7 +4,7 @@ if (localStorage.getItem("cartData")){
     cartData = JSON.parse(localStorage.getItem("cartData"));
 }
 
-const formMain = document.getElementById('form');
+var formMain = document.getElementById('form');
 
 const formContainer = document.createElement('div');
 const formCheckout = document.createElement('form');
@@ -19,6 +19,7 @@ const formFeedbackLast = document.createElement('div');
 const formColEmail = document.createElement('div');
 const formLabelEmail = document.createElement('label');
 const formInputEmail = document.createElement('input');
+const formSpanEmail = document.createElement('span')
 const formFeedbackEmail = document.createElement('div');
 const formColAddress = document.createElement('div');
 const formLabelAddress = document.createElement('label');
@@ -37,9 +38,8 @@ const formTotal = document.createElement('div');
 formLabelFirst.innerHTML = 'First name';
 formFeedbackFirst.innerHTML = 'looks great!';
 formLabelLast.innerHTML = 'Last name';
-formFeedbackLast.innerHTML = 'looks great!'
+formFeedbackLast.innerHTML = 'looks great!';
 formLabelEmail.innerHTML = 'E-mail';
-formFeedbackEmail.innerHTML = 'looks great!'
 formLabelAddress.innerHTML = 'Address';
 formFeedbackAddress.innerHTML = 'looks great!';
 formLabelCity.innerHTML = 'City';
@@ -49,7 +49,7 @@ formTotal.innerHTML = '<b>Total: </b>' + new Intl.NumberFormat('en-IN', { style:
 
 
 
-formContainer.setAttribute('class', 'container m-6');
+formContainer.setAttribute('class', 'container');
 formCheckout.setAttribute('id', 'checkout');
 formCheckout.setAttribute('class', 'row g-3 needs-validation');
 formColFirst.setAttribute('class', 'col-md-4');
@@ -74,14 +74,31 @@ formInputLast.setAttribute('id', 'validationCustom02');
 formFeedbackLast.setAttribute('class', 'valid-feedback');
 
 
-formColEmail.setAttribute('class', 'col-md-4');
+formColEmail.setAttribute('class', 'col-md-4 input-box');
 formLabelEmail.setAttribute('for', 'validationCustom03');
 formLabelEmail.setAttribute('class', 'form-label');
+formInputEmail.setAttribute('type', 'text')
 formInputEmail.setAttribute('name', 'email');
-formInputEmail.setAttribute('type', 'text');
+formInputEmail.setAttribute('onkeydown', 'validation()')
+function validation() {
+	const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	const text = document.getElementById('text')
+	if (formInputEmail.match(emailPattern)) {
+	formMain.classList.add('valid')
+	formMain.classList.remove('invalid')
+	text.innerHTML = 'Your Email Address is valid'
+	text.style.color = '#00ff00'
+	} else {
+		formMain.classList.remove('valid')
+		formMain.classList.add('invalid')
+		text.innerHTML = 'Please enter a valid email address'
+		text.style.color = '#ff0000'
+	}
+} 
 formInputEmail.required = true;
 formInputEmail.setAttribute('class', 'form-control');
 formInputEmail.setAttribute('id', 'validationCustom03');
+formSpanEmail.setAttribute('id', 'text')
 formFeedbackEmail.setAttribute('class', 'valid-feedback');
 
 
@@ -124,6 +141,7 @@ formColLast.appendChild(formFeedbackLast);
 formCheckout.appendChild(formColEmail);
 formColEmail.appendChild(formLabelEmail);
 formColEmail.appendChild(formInputEmail);
+formInputEmail.appendChild(formSpanEmail);
 formColEmail.appendChild(formFeedbackEmail);
 
 formCheckout.appendChild(formColAddress);
@@ -154,6 +172,12 @@ form.addEventListener('submit', function (event) {
 	const formData = new FormData(form)
 	
 	const products = []
+	for (let i = 0; i < cartData.length; i++ ){
+
+		products.push(cartData[i]._id)
+	}
+
+
 	
 	const info = {
 	    firstName: formData.get('firstName'),
@@ -164,9 +188,28 @@ form.addEventListener('submit', function (event) {
     
 	}
 	localStorage.setItem('userInfo', JSON.stringify(info));
+
+	fetch('http://localhost:3000/api/teddies/order', {
+		method: 'POST', 
+		headers: {
+		'Content-Type': 'application/json'
+	},
+	body: JSON.stringify({
+		contact: info,
+		products: products,
+
+	})})
+	.then(response => response.json())
+	.then(data => {
+		console.log(data)
+		//cartBody =  JSON.parse(localStorage.setItem('cartData'))
+	})
+	.catch(error => console.error(error))
+
+
 	//send data to backend
 	console.log(info)
-	location.href='order-confirmation.html';
+	//location.href='order-confirmation.html';
 	form.classList.add('was-validated')
 }, false)
 

@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
-
 const uuid = document.getElementById('uuid');
 
 const uuidPlaceholder = document.createElement('div');
@@ -8,11 +6,8 @@ uuidPlaceholder.setAttribute('id', 'uuid');
 const cartData = localStorage.getItem("cartData")
     JSON.parse(localStorage.getItem("cartData"));
 
-
-uuidv4();
-
 const cart = []
-
+//in event listener
 let products = []
 for (let i = 0; i < cart.length; i++ ){
 	products.push(cart[i]._id)
