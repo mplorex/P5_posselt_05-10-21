@@ -40,6 +40,7 @@ formFeedbackFirst.innerHTML = 'looks great!';
 formLabelLast.innerHTML = 'Last name';
 formFeedbackLast.innerHTML = 'looks great!';
 formLabelEmail.innerHTML = 'E-mail';
+formFeedbackEmail.innerHTML = 'looks great!';
 formLabelAddress.innerHTML = 'Address';
 formFeedbackAddress.innerHTML = 'looks great!';
 formLabelCity.innerHTML = 'City';
@@ -52,6 +53,7 @@ formTotal.innerHTML = '<b>Total: </b>' + new Intl.NumberFormat('en-IN', { style:
 formContainer.setAttribute('class', 'container');
 formCheckout.setAttribute('id', 'checkout');
 formCheckout.setAttribute('class', 'row g-3 needs-validation');
+formCheckout.noValidate = false;
 formColFirst.setAttribute('class', 'col-md-4');
 formLabelFirst.setAttribute('for', 'validationCustom01');
 formLabelFirst.setAttribute('class', 'form-label');
@@ -77,25 +79,10 @@ formFeedbackLast.setAttribute('class', 'valid-feedback');
 formColEmail.setAttribute('class', 'col-md-4 input-box');
 formLabelEmail.setAttribute('for', 'validationCustom03');
 formLabelEmail.setAttribute('class', 'form-label');
-formInputEmail.setAttribute('type', 'text')
+formInputEmail.setAttribute('type', 'email')
 formInputEmail.setAttribute('name', 'email');
 formInputEmail.setAttribute('onkeydown', 'validation()')
-function validation() {
-	const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	const text = document.getElementById('text')
-	if (formInputEmail.match(emailPattern)) {
-	formMain.classList.add('valid')
-	formMain.classList.remove('invalid')
-	text.innerHTML = 'Your Email Address is valid'
-	text.style.color = '#00ff00'
-	} else {
-		formMain.classList.remove('valid')
-		formMain.classList.add('invalid')
-		text.innerHTML = 'Please enter a valid email address'
-		text.style.color = '#ff0000'
-	}
-} 
-formInputEmail.required = true;
+formInputEmail.required = false;
 formInputEmail.setAttribute('class', 'form-control');
 formInputEmail.setAttribute('id', 'validationCustom03');
 formSpanEmail.setAttribute('id', 'text')
