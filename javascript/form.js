@@ -4,7 +4,7 @@ if (localStorage.getItem("cartData")){
     cartData = JSON.parse(localStorage.getItem("cartData"));
 }
 
-var formMain = document.getElementById('form');
+const formMain = document.getElementById('form');
 
 const formContainer = document.createElement('div');
 const formCheckout = document.createElement('form');
@@ -81,8 +81,7 @@ formLabelEmail.setAttribute('for', 'validationCustom03');
 formLabelEmail.setAttribute('class', 'form-label');
 formInputEmail.setAttribute('type', 'email')
 formInputEmail.setAttribute('name', 'email');
-formInputEmail.setAttribute('onkeydown', 'validation()')
-formInputEmail.required = false;
+formInputEmail.required = true;
 formInputEmail.setAttribute('class', 'form-control');
 formInputEmail.setAttribute('id', 'validationCustom03');
 formSpanEmail.setAttribute('id', 'text')
@@ -110,7 +109,7 @@ formInputCity.setAttribute('class', 'form-control');
 formInputCity.setAttribute('id', 'validationCustom05');
 formFeedbackCity.setAttribute('class', 'valid-feedback');
 formColBtn.setAttribute('class', 'col-12');
-formColBtnA.setAttribute('href', 'checkout-order.html')
+formColBtnA.setAttribute('href', 'order-confirmation.html')
 formColBtnPrimary.setAttribute('class', 'btn btn-primary');
 
 formMain.appendChild(formContainer);
@@ -143,9 +142,9 @@ formColCity.appendChild(formFeedbackCity);
 
 formCheckout.appendChild(formTotal)
 
-formCheckout.appendChild(formColBtnA);
-formColBtnA.appendChild(formColBtn);
+formCheckout.appendChild(formColBtn);
 formColBtn.appendChild(formColBtnPrimary);
+formColBtnPrimary.appendChild(formColBtnA);
 
 
 const form = document.getElementById('checkout')
@@ -189,16 +188,16 @@ form.addEventListener('submit', function (event) {
 	.then(response => response.json())
 	.then(data => {
 		console.log(data)
-		//cartBody =  JSON.parse(localStorage.setItem('cartData'))
+		localStorage.setItem('orderId', JSON.stringify(data.orderId))
 	})
 	.catch(error => console.error(error))
 
-
-	//send data to backend
 	console.log(info)
-	//location.href='order-confirmation.html';
+	location.href='order-confirmation.html'
+	
 	form.classList.add('was-validated')
 }, false)
+
 
 function addInfo (data) {
 	info.push(data)

@@ -1,8 +1,10 @@
 const teddyData = JSON.parse(localStorage.getItem('cartData'));
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+const orderId = JSON.parse(localStorage.getItem('orderId'));
 
 console.log(teddyData);
-console.log(userInfo)
+console.log(userInfo);
+console.log(orderId)
 
 
 
@@ -10,6 +12,10 @@ if(teddyData.length!=0){
     const userData = document.getElementById('user-info')
 
     userData.setAttribute('class', 'container')
+
+    const order = document.createElement('div');
+    order.innerHTML = `<h2>Your order confirmation number: ${orderId} </h2>`
+    userData.appendChild(order)
 
     const userInfoTitle = document.createElement('h2');
     userInfoTitle.innerHTML = 'Thank you for your purchase!';
@@ -161,53 +167,3 @@ function emptycart()
     
 }
 
-
-//
-
-//import cart data
-/* const cart = [
-	{
-		_id: '12345'
-	},
-	{
-		_id: '12345'
-	}
-] */
-
-/*const cart = []
-
-let products = []
-for (let i = 0; i < cart.length; i++ ){
-	products.push(cart[i]._id)
-}
-const info = {
-	contact: {
-		first:         
-    userInfo.firstName,
-    last: 
-    userInfo.lastName,
-    email: 
-    userInfo.address,
-    address: 
-    userInfo.address,
-    city:
-    userInfo.city
-	},
-	products: products
-}
-
-// Default options are marked with *
-fetch('http://localhost:3000/api/teddies/', {
-	method: 'POST', 
-	headers: {
-		'Content-Type': 'application/json'
-	},
-	body: JSON.stringify(info) 
-})
-	.then(response => response.json())
-	.then(data => {
-		cartBody =  JSON.parse(localStorage.setItem('cartData'))
-		
-	})
-	.catch(error => console.error(error))
-*/
