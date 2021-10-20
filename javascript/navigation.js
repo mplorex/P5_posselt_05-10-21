@@ -19,18 +19,17 @@ navItem2A.innerHTML = 'Cart'
 //classes
 
 navigationContainer.setAttribute('class', 'container')
-
 menuButton.setAttribute('class', 'navbar-toggler')
 menuButton.setAttribute('type', 'button')
 menuButton.setAttribute('data-toggle', 'collapse')
-menuButton.setAttribute('data-target', '#navbarContent')
-menuButton.setAttribute('aria-controls', 'navbarCollapse')
+menuButton.setAttribute('data-target', '#navbarSupportedContent')
+menuButton.setAttribute('aria-controls', 'navbarSupportedContent')
 menuButton.setAttribute('aria-expanded', 'false')
 menuButton.setAttribute('aria-label', 'Toggle navigation')
 buttonSpan.setAttribute('class', 'navbar-toggler-icon')
 
 navbar.setAttribute('class', 'collapse navbar-collapse')
-navbar.setAttribute('id', 'navbarContent')
+navbar.setAttribute('id', 'navbarSupportedContent')
 navItems.setAttribute('class', 'navbar-nav mr-auto')
 navItem1.setAttribute('class', 'nav-item active')
 navItem1A.setAttribute('class', 'nav-link')

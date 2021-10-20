@@ -48,3 +48,8 @@ function checkoutLink() {
 }
 
 console.log(cartButtons);
+
+const buttonStyle = document.getElementById('checkout-btns');
+
+buttonStyle.style.paddingBottom = "184px";
+console.log(buttonStyle)
