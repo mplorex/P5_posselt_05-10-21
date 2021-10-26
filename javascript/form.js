@@ -212,3 +212,8 @@ function cartTotal(){
     return cartTotal;
 }
 console.log(cartTotal());
+
+const formStyle = document.getElementById('form');
+
+formStyle.style.paddingBottom = "100px";
+console.log(buttonStyle)
